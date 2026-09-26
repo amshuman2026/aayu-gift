@@ -494,6 +494,13 @@
         "dance-player-" + (i + 1)
       );
       card.append(h, frame.el, note);
+      if (v.caption) {
+        const cap = document.createElement("p");
+        cap.className = "caption dance-caption";
+        cap.dataset.testid = "dance-caption-" + (i + 1);
+        cap.textContent = v.caption;
+        card.insertBefore(cap, note);
+      }
       grid.appendChild(card);
       cards.push(card);
     });

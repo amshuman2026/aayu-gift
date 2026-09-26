@@ -250,15 +250,17 @@
     "videos": [
       {
         "id": 1,
-        "title": "Our first dance",
-        "video": "",
-        "poster": ""
+        "title": "Garba night",
+        "video": "/media/dance-1.mp4",
+        "poster": "",
+        "caption": "thank you for trying to make me slightly more guiju everyday bebooooo. I loved this day especially because you were so patient with me even when i made you wait for 45 mins hehe.<3"
       },
       {
         "id": 2,
-        "title": "The one we never posted",
-        "video": "",
-        "poster": ""
+        "title": "Dancemaster at her finest",
+        "video": "/media/dance-2.mp4",
+        "poster": "",
+        "caption": "the cutest little dancemaster at her finest (sorryyyy lmao)"
       }
     ]
   },

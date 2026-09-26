@@ -52,7 +52,8 @@ correctly · Dance Room = both videos played once · Final Room = video played.
    answers, `quiz-10`; Q5's `correctIndex` is still `null` = accepts any answer until confirmed), 4 options each. Wrong → teasing line and she can retry
    (retry-until-correct); right → warm line, then auto-advance. Question 10 shows a completion
    screen.
-3. **Dance Room** — exactly 2 videos; video 2 greyed out with "Play the first video to unlock
+3. **Dance Room** — exactly 2 real videos (`/media/dance-1.mp4`, `/media/dance-2.mp4`), each with
+   a handwritten `caption` under the player; video 2 greyed out with "Play the first video to unlock
    this one" until video 1 has played through.
 4. **Final Room** — locked until rooms 1–3 are done; player ready, video file pending. The
    ending caption ("…you have always been my home.") stays hidden until the video's `onPlayed`

@@ -63,8 +63,10 @@ end-of-quiz screen text is in `"completion"`.
 Find `"danceRoom"` → `"videos"`. Exactly two blocks:
 
 ```json
-{ "id": 1, "title": "Our first dance", "video": "/media/dance-1.mp4", "poster": "" }
+{ "id": 1, "title": "Garba night", "video": "/media/dance-1.mp4", "poster": "", "caption": "your line here" }
 ```
+
+`caption` is the handwritten line printed under that clip — leave it `""` for no caption.
 
 Video 2 stays greyed out until video 1 has played through once. The greyed-out label is
 `"lockedLabel"`.
