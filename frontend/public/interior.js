@@ -148,6 +148,7 @@
         rooms[id].el.classList.add("open");
         rooms[id].back.focus({ preventScroll: true });
         if (id === "timeCapsule") renderMemory();
+        if (id === "finalDoor") markDone("finalDoor");
       },
       REDUCED ? 60 : 620
     );
@@ -333,8 +334,12 @@
     tcRefs.strip.querySelectorAll(".tc-dot").forEach((d, i) => {
       d.classList.toggle("active", i === tcIndex);
     });
+    /* scroll only the strip itself — scrollIntoView would also shove the room sideways */
     const active = tcRefs.strip.children[tcIndex];
-    if (active) active.scrollIntoView({ block: "nearest", inline: "center" });
+    if (active) {
+      tcRefs.strip.scrollLeft =
+        active.offsetLeft - tcRefs.strip.clientWidth / 2 + active.offsetWidth / 2;
+    }
   }
 
   /* ---------------- room 2 · game room ---------------- */
@@ -553,26 +558,32 @@
     }
   }
 
-  /* ---------------- room 4 · final room ---------------- */
+  /* ---------------- room 4 · final room (a letter, not a video) ---------------- */
   function buildFinalRoom() {
     const c = content.finalDoor;
     const body = roomShell("finalDoor", c.title, "the last door in the house");
-    const cap = document.createElement("p");
-    cap.className = "caption" + (REDUCED ? "" : " cap-hidden");
-    cap.dataset.testid = "final-caption";
-    cap.textContent = c.caption || "";
-    const frame = mediaFrame(
-      c.video,
-      c.poster,
-      c.title,
-      c.video ? "" : c.emptyText,
-      () => {
-        cap.classList.remove("cap-hidden");
-        markDone("finalDoor");
-      },
-      "final-player"
-    );
-    body.append(frame.el, cap);
+    const letter = document.createElement("article");
+    letter.className = "letter";
+    letter.dataset.testid = "final-letter";
+    if (c.letterTitle) {
+      const h = document.createElement("h3");
+      h.className = "letter-title";
+      h.dataset.testid = "final-letter-title";
+      h.textContent = c.letterTitle;
+      letter.appendChild(h);
+    }
+    (c.letter || []).forEach((para, i) => {
+      const p = document.createElement("p");
+      p.dataset.testid = "final-letter-para-" + (i + 1);
+      p.textContent = para;
+      letter.appendChild(p);
+    });
+    const sign = document.createElement("p");
+    sign.className = "letter-sign";
+    sign.dataset.testid = "final-letter-sign";
+    sign.textContent = "\u2014 always yours";
+    letter.appendChild(sign);
+    body.appendChild(letter);
   }
 
   /* ---------------- boot ---------------- */

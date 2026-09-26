@@ -60,9 +60,9 @@ correctly · Dance Room = both videos played once · Final Room = video played.
 3. **Dance Room** — exactly 2 real videos (`/media/dance-1.mp4`, `/media/dance-2.mp4`), each with
    a handwritten `caption` under the player; video 2 greyed out with "Play the first video to unlock
    this one" until video 1 has played through.
-4. **Final Room** — locked until rooms 1–3 are done; player ready, video file pending. The
-   ending caption ("…you have always been my home.") stays hidden until the video's `onPlayed`
-   fires, then fades in (instant under reduced motion).
+4. **Final Room** — locked until rooms 1–3 are done. No video: it renders a centred anniversary
+   letter from `finalDoor.letterTitle` + `finalDoor.letter` (array of paragraphs) in a card, each
+   block fading up in sequence, signed "— always yours". Opening the room marks it complete.
 
 ### Empty media slots
 Because no video files have been supplied yet, an empty `video` field renders a placeholder

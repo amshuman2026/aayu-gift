@@ -276,19 +276,24 @@
       },
       {
         "id": 2,
-        "title": "Dancemaster at her finest",
+        "title": "Dancey dancey",
         "video": "/media/dance-2.mp4",
         "poster": "",
-        "caption": "the cutest little dancemaster at her finest (sorryyyy lmao)"
+        "caption": "I love seeing this happy dancey dancey version of you, i know how much you miss clubbing bub"
       }
     ]
   },
   "finalDoor": {
     "title": "Final Room",
     "lockedText": "Finish the Time Capsule, the Game Room and the Dance Room first.",
-    "emptyText": "A video message is waiting to be recorded for you.",
-    "video": "",
-    "poster": "",
-    "caption": "That's the whole idea behind this house, Aayushi — you have always been my home."
+    "letterTitle": "Happy one year baby",
+    "letter": [
+      "I love everything about us, most importantly I love the journey of us.",
+      "I love how much you make me want to work on myself and become better. I see you studying every day and working towards your future, and I love seeing my ambitious girl love herself and work so hard for the life she wants.",
+      "I love how you can depend on me, even though I know it’s very new for you and was difficult initially. I still remember how weird you felt giving me your bag to hold (I literally had to snatch it from you 😂). I want to be that man who will always take care of you, baby. Thank you for placing that trust in me.",
+      "I love how you prioritise our plans and see ends meet to make us happy(even though u claim it makes u more happier, it makes me more happy)  I love how you always somehow manage your ghar ka scene, coming up with the craziest lies and even forging pictures with your friends just to have a bahana to come meet me or spend time with me.",
+      "Every little effort you put into us means so much to me. If we were living in the 1800s and had a barter system, I’d probably be in debt to you forever. Although knowing you, you’d probably treat me like a slave back then anyway 😂 (I’m disregarding all the black jokes you’ve made on me 😊).",
+      "And I think more than anything, I love what we have become to each other. Somewhere along the way, you stopped feeling like just my girlfriend and started feeling like home. You’re the person I want to come back to, tell everything to, annoy, laugh with, fight with, and just exist with. No matter how crazy life gets, being with you gives me that feeling of being home. And I hope I can always be that home for you too."
+    ]
   }
 }

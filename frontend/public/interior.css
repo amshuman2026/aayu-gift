@@ -801,3 +801,55 @@ body.reduced .swap {
 body.reduced .peeker-svg {
   animation: none;
 }
+
+/* ---------- room 4: the letter ---------- */
+.letter {
+  width: min(680px, 100%);
+  margin-inline: auto;
+  text-align: center;
+  display: grid;
+  gap: 18px;
+  padding: clamp(20px, 3vw, 40px) clamp(16px, 3vw, 38px) clamp(26px, 4vw, 46px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 196, 120, 0.22);
+  background: linear-gradient(180deg, rgba(38, 27, 44, 0.72), rgba(18, 13, 26, 0.72));
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+.letter-title {
+  font-family: var(--font-hand);
+  font-size: clamp(30px, 4.6vw, 50px);
+  font-weight: 700;
+  color: #ffd79a;
+  line-height: 1.1;
+}
+.letter p {
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(14.5px, 1.35vw, 17px);
+  line-height: 1.68;
+  color: rgba(247, 238, 222, 0.92);
+  text-wrap: pretty;
+}
+.letter-sign {
+  font-family: var(--font-hand) !important;
+  font-size: clamp(19px, 2.2vw, 26px) !important;
+  color: #ffd79a !important;
+  margin-top: 6px;
+}
+.room.open .letter > * {
+  animation: letterIn 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.room.open .letter > *:nth-child(1) { animation-delay: 0.1s; }
+.room.open .letter > *:nth-child(2) { animation-delay: 0.26s; }
+.room.open .letter > *:nth-child(3) { animation-delay: 0.38s; }
+.room.open .letter > *:nth-child(4) { animation-delay: 0.5s; }
+.room.open .letter > *:nth-child(5) { animation-delay: 0.62s; }
+.room.open .letter > *:nth-child(6) { animation-delay: 0.74s; }
+.room.open .letter > *:nth-child(7) { animation-delay: 0.86s; }
+.room.open .letter > *:nth-child(8) { animation-delay: 0.98s; }
+@keyframes letterIn {
+  from { opacity: 0; transform: translateY(14px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+body.reduced .room.open .letter > * {
+  animation: none;
+}
