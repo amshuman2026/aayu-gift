@@ -15,7 +15,8 @@
     musicRoom: { id: "musicRoom", label: "Music Room", unlocked: false },
     travelRoom: { id: "travelRoom", label: "Travel Room", unlocked: false },
     balcony: { id: "balcony", label: "Balcony", unlocked: false },
-    timeCapsule: { id: "timeCapsule", label: "Time Capsule", unlocked: false },
+    timeCapsule: { id: "timeCapsule", label: "Time Capsule", unlocked: true },
+    danceRoom: { id: "danceRoom", label: "Dance Room", unlocked: false },
     bedroom: { id: "bedroom", label: "Bedroom", unlocked: false },
     finalDoor: { id: "finalDoor", label: "Final Door", unlocked: false },
   };

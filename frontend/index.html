@@ -6,7 +6,7 @@
     <title>Aayushi &amp; Me — Our Little House</title>
     <meta
       name="description"
-      content="A little house on a quiet night. There's something waiting inside — click the door."
+      content="A little house on a quiet night. Step inside for the Time Capsule, the Game Room, the Dance Room and one last door."
     />
     <meta name="theme-color" content="#12163B" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,10 +14,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:wght@500;600;700&family=Lora:wght@400;500&family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/interior.css" />
   </head>
   <body>
     <main id="app" data-testid="anniversary-house-scene" aria-label="Our little house on a quiet night">
@@ -360,7 +361,7 @@
         </div>
       </div>
 
-      <!-- ============ INTERIOR PLACEHOLDER ============ -->
+      <!-- ============ INTERIOR · HALLWAY + 4 ROOMS (Stage 2) ============ -->
       <section
         class="interior"
         id="interior"
@@ -368,14 +369,33 @@
         role="region"
         aria-label="Inside the house"
       >
-        <div class="interior-arch" aria-hidden="true"></div>
-        <div class="motes" aria-hidden="true">
-          <span class="mote"></span><span class="mote"></span><span class="mote"></span>
-          <span class="mote"></span><span class="mote"></span>
+        <div class="hall" id="hall" data-testid="hallway-scene">
+          <div class="hall-frame">
+            <img
+              class="hall-bg"
+              src="/hallway.jpg"
+              alt="Our hallway: the TV wall, the sofas, the row of doors, and the staircase"
+              data-testid="hallway-background"
+            />
+            <div class="amb amb-fan" aria-hidden="true"></div>
+            <div class="amb amb-tv" aria-hidden="true"></div>
+            <div class="amb amb-lamp" aria-hidden="true"></div>
+            <div class="amb amb-pendant" aria-hidden="true"></div>
+            <div class="motes" aria-hidden="true">
+              <span class="mote"></span><span class="mote"></span><span class="mote"></span>
+              <span class="mote"></span><span class="mote"></span>
+            </div>
+            <div class="doors" id="hallDoors" data-testid="hallway-doors"></div>
+          </div>
         </div>
-        <h1 class="interior-title">Welcome home.</h1>
-        <p class="interior-sub">Stage 1 — the rest of our story is still being written&hellip;</p>
-        <button class="step-outside" id="stepOutsideBtn" data-testid="step-outside-button">Step back outside</button>
+
+        <div class="hall-hud">
+          <p class="hall-title" data-testid="hallway-title">Four doors. Start with the Time Capsule.</p>
+          <button class="step-outside" id="stepOutsideBtn" data-testid="step-outside-button">Step back outside</button>
+        </div>
+
+        <p class="toast" id="hallToast" data-testid="locked-door-message" role="status" aria-live="polite"></p>
+        <div class="rooms" id="rooms"></div>
       </section>
 
       <!-- ============ MAILBOX NOTE ============ -->
@@ -397,5 +417,6 @@
       </p>
     </noscript>
     <script src="/script.js" defer></script>
+    <script src="/interior.js" defer></script>
   </body>
 </html>

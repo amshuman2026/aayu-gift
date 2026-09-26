@@ -1,0 +1,520 @@
+{
+  "_readme": "Aayushi & Me - all fill-in-later content lives here. See HOW_TO_EDIT.md next to this file. Only simple text and file paths - never any code.",
+  "hallway": {
+    "background": "/hallway.jpg",
+    "lockedMessage": "View the room before this to unlock.",
+    "doors": [
+      {
+        "room": "timeCapsule",
+        "name": "Time Capsule"
+      },
+      {
+        "room": "gameRoom",
+        "name": "Game Room"
+      },
+      {
+        "room": "danceRoom",
+        "name": "Dance Room"
+      },
+      {
+        "room": "finalDoor",
+        "name": "Final Room"
+      }
+    ]
+  },
+  "timeCapsule": {
+    "title": "Time Capsule",
+    "subtitle": "fifty-four little pieces of us",
+    "memories": [
+      {
+        "id": 1,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 2,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 3,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 4,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 5,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 6,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 7,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 8,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 9,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 10,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 11,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 12,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 13,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 14,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 15,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 16,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 17,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 18,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 19,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 20,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 21,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 22,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 23,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 24,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 25,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 26,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 27,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 28,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 29,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 30,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 31,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 32,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 33,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 34,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 35,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 36,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 37,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 38,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 39,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 40,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 41,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 42,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 43,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 44,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 45,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 46,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 47,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 48,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 49,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 50,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 51,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 52,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 53,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      },
+      {
+        "id": 54,
+        "video": "",
+        "poster": "",
+        "caption": ""
+      }
+    ]
+  },
+  "gameRoom": {
+    "title": "Game Room",
+    "wrongMessages": [
+      "seems like u need to visit the boyfriend archives again baby",
+      "wrong one, baby - back to the boyfriend archives with you",
+      "nope! revise the boyfriend archives, my love"
+    ],
+    "rightMessages": [
+      "yesss that's my girl \u2014 you remember everything",
+      "perfect. you really do pay attention to us",
+      "correct, baby. i'm so proud of you"
+    ],
+    "completion": {
+      "title": "10 out of 10 hearts",
+      "text": "you remembered all of it. of course you did."
+    },
+    "questions": [
+      {
+        "id": 1,
+        "photo": "",
+        "question": "Where did we meet for the very first time?",
+        "options": [
+          "The old coffee place",
+          "College library",
+          "A friend's birthday",
+          "On a train"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "id": 2,
+        "photo": "",
+        "question": "What do I call you when you're being dramatic?",
+        "options": [
+          "baby",
+          "aayu",
+          "drama queen",
+          "madam ji"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "id": 3,
+        "photo": "",
+        "question": "Our go-to comfort movie?",
+        "options": [
+          "Dhamaal",
+          "Zindagi Na Milegi Dobara",
+          "Barfi",
+          "Queen"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": 4,
+        "photo": "",
+        "question": "Which song did we play on loop that one whole week?",
+        "options": [
+          "Kesariya",
+          "Tum Se Hi",
+          "Pasoori",
+          "Channa Mereya"
+        ],
+        "correctIndex": 3
+      },
+      {
+        "id": 5,
+        "photo": "",
+        "question": "What did I order the first time we ate out together?",
+        "options": [
+          "Paneer tikka",
+          "Cold coffee and fries",
+          "Maggi",
+          "Butter chicken"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": 6,
+        "photo": "",
+        "question": "Where did we take our first proper photo together?",
+        "options": [
+          "Terrace at night",
+          "Outside the metro station",
+          "In the car",
+          "At the beach"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "id": 7,
+        "photo": "",
+        "question": "What time of night do our best conversations start?",
+        "options": [
+          "Right after dinner",
+          "Around 11",
+          "Past 1 a.m.",
+          "Early morning"
+        ],
+        "correctIndex": 2
+      },
+      {
+        "id": 8,
+        "photo": "",
+        "question": "Which of these did I gift you first?",
+        "options": [
+          "A letter",
+          "A bracelet",
+          "A playlist",
+          "A teddy"
+        ],
+        "correctIndex": 0
+      },
+      {
+        "id": 9,
+        "photo": "",
+        "question": "What's the one thing I always tease you about?",
+        "options": [
+          "Your sneezes",
+          "Your terrible sense of direction",
+          "Your midnight cravings",
+          "Your alarm snoozing"
+        ],
+        "correctIndex": 1
+      },
+      {
+        "id": 10,
+        "photo": "",
+        "question": "How do we end every single call?",
+        "options": [
+          "Goodnight",
+          "One more minute",
+          "I love you more",
+          "You hang up first"
+        ],
+        "correctIndex": 3
+      }
+    ]
+  },
+  "danceRoom": {
+    "title": "Dance Room",
+    "lockedLabel": "Play the first video to unlock this one",
+    "videos": [
+      {
+        "id": 1,
+        "title": "Our first dance",
+        "video": "",
+        "poster": ""
+      },
+      {
+        "id": 2,
+        "title": "The one we never posted",
+        "video": "",
+        "poster": ""
+      }
+    ]
+  },
+  "finalDoor": {
+    "title": "Final Room",
+    "lockedText": "Finish the Time Capsule, the Game Room and the Dance Room first.",
+    "emptyText": "A video message is waiting to be recorded for you.",
+    "video": "",
+    "poster": "",
+    "caption": ""
+  }
+}

@@ -1,46 +1,61 @@
-# Aayushi & Me — Interactive Anniversary House (Stage 1)
+# Aayushi & Me — Interactive Anniversary House
 
-## What it is
-A static, vanilla HTML/CSS/JS site (no backend, no auth, no DB usage) — the night exterior of a
-relationship house plus the front-door entry sequence. Built per the attached Stage-1 PRD.
+A gift website (vanilla HTML/CSS/JS, no React, no backend, no DB). Served by the Vite dev
+server from `frontend/` (`index.html` + `public/`), and mirrored as a portable standalone copy
+in `/site` (open `site/index.html` with relative paths).
 
-## Where the code lives
-- `/app/site/` — **portable deliverable** ("give html"): same three files + favicons, rewritten to
-  relative paths (`./styles.css`, `./script.js`) so the folder runs on any static host.
-- `/app/frontend/index.html` — the whole scene markup: sky/stars/moon/clouds layer, distant ridge
-  SVG, the house SVG (asymmetric two-story, off-center door, porch + lantern, chimney + smoke,
-  curtained window, balcony + cat window, signboard "Aayushi & Me", curved path, mailbox, hedges,
-  trees), foreground grass, narrative hints, interior placeholder, mailbox note, loader.
-- `/app/frontend/public/styles.css` — palette/typography tokens, layered parallax layout, all
-  ambient keyframes (smoke, curtains, foliage, grass, clouds, lantern flicker, window breathing),
-  hover states, door 3D open sequence, interior reveal, loader, reduced-motion block.
-- `/app/frontend/public/script.js` — rooms config object (10 rooms, structure only), AudioManager
-  stub (playAmbient/playSFX/setRoomTrack — no real playback per PRD), star field, fireflies
-  (rAF wander + hover flee + click fly-to-porch), mouse parallax + mobile idle drift, door
-  sequence, 5 easter eggs (moon→shooting star, chimney→puffs, bush→rustle, cat→stretch, firefly),
-  mailbox note, Esc/keyboard handling.
-- The React template app in `frontend/src/**` is intentionally NOT mounted (PRD requires vanilla
-  static HTML); the Vite entry `frontend/index.html` links the static assets directly.
+## Files
 
-## Key flows
-1. Load: dark screen → warm ember grows → scene fades in → "There's something waiting inside." →
-   "Click the door." → both fade on first interaction.
-2. Front door (click / Enter): camera zoom to door → lantern warms → handle turns → door swings
-   (rotateY) → warm bloom → cross-fade to interior "Welcome home." → "Step back outside" (or Esc)
-   returns and the door closes.
-3. Mailbox: click → note card "Something special is being prepared…"; close via ×, outside click,
-   or Esc.
+| file | role |
+| --- | --- |
+| `frontend/index.html` | whole page: Stage 1 exterior SVG scene + Stage 2 interior shell |
+| `frontend/public/styles.css` | Stage 1 — night exterior, house, door sequence |
+| `frontend/public/script.js` | Stage 1 — stars, fireflies, parallax, easter eggs, front-door entry |
+| `frontend/public/interior.css` | Stage 2 — hallway, door hotspots, four rooms |
+| `frontend/public/interior.js` | Stage 2 — content loading, progress/locks, all room logic |
+| `frontend/public/hallway.jpg` | the hallway photograph used as the interior background |
+| `frontend/public/content/rooms.json` | **all** fill-in-later content (videos, captions, quiz) |
+| `frontend/public/content/HOW_TO_EDIT.md` | plain-English edit guide for that JSON |
+| `/site/**` | byte-identical mirror of the above (portable deliverable) |
+
+## Stage 1 (exterior)
+Night scene, parallax layers, twinkling stars, fireflies that follow/flee the cursor, easter
+eggs on the moon, chimney, cat, bush and mailbox. Clicking the front door zooms in and reveals
+the interior.
+
+## Stage 2 (interior)
+Hallway = the photo with **4 door hotspots** (left→right): Time Capsule, Game Room, Dance Room,
+Final Room. All four show a nameplate from the start; locked ones look dimmed with a padlock.
+
+- Locked door click → shake + toast "View the room before this to unlock."
+- Unlocked door click → camera push-in + cross-fade into the room; every room has
+  "← Back to hallway" (Escape also works).
+- Ambient: rotating ceiling fan, TV flicker, breathing lamp + pendant glow, drifting dust
+  motes. All disabled under `prefers-reduced-motion`.
+
+### Progress / locks
+Sequential: `timeCapsule → gameRoom → danceRoom → finalDoor`. Only the Time Capsule is open on
+a first visit. Persisted in `localStorage["aayushiHouse.progress.v1"]` as
+`{timeCapsule, gameRoom, danceRoom, finalDoor: boolean}`.
+
+Completion rules: Time Capsule = play at least one memory · Game Room = answer all 10 questions
+correctly · Dance Room = both videos played once · Final Room = video played.
+
+### Rooms
+1. **Time Capsule** — dim photo-tile collage background, 54 video slots, one at a time, with
+   prev/next, a numbered strip, and an (empty by default) caption under the video.
+2. **Game Room** — 10 photo questions, 4 options each. Wrong → teasing line and she can retry
+   (retry-until-correct); right → warm line, then auto-advance. Question 10 shows a completion
+   screen.
+3. **Dance Room** — exactly 2 videos; video 2 greyed out with "Play the first video to unlock
+   this one" until video 1 has played through.
+4. **Final Room** — locked until rooms 1–3 are done; player ready, video file pending.
+
+### Empty media slots
+Because no video files have been supplied yet, an empty `video` field renders a placeholder
+card with a ▶ Play button and a short progress bar that completes the "played" event — so the
+unlock chain is fully walkable before the real files land. Dropping a real path into
+`rooms.json` swaps in a native `<video>` with controls.
 
 ## Auth
-None. No credentials exist (`test_credentials.md` notes the same).
-
-## Notes for testers
-- Door/mailbox/moon/chimney/cat/bush are SVG groups with role="button", tabindex, aria-labels;
-  Enter/Space activates door. Focus ring: 2px amber outline.
-- `prefers-reduced-motion` disables parallax/ambient loops/static fireflies; door still opens.
-- data-testids: anniversary-house-scene, front-door-trigger, front-door-handle, mailbox-trigger,
-  mailbox-note-card, mailbox-note-close, moon-easter-egg, cat-easter-egg, chimney-easter-egg,
-  garden-foliage, house-signboard, narrative-text-banner, house-interior-reveal,
-  step-outside-button, firefly.
-- Backend FastAPI (port 8001) is untouched and still serves `/api` (template status routes); the
-  house makes no API calls by design.
+None. No accounts, no credentials, no backend endpoints.
