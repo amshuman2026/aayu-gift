@@ -292,12 +292,13 @@
                 </g>
 
                 <!-- signboard -->
-                <g data-testid="house-signboard" aria-label="A small hand-painted signboard reading Aayushi and Me">
+                <g data-testid="house-signboard" aria-label="A small hand-painted signboard reading Amshuman and Aayushi&#39;s Home">
                   <g transform="rotate(-4 457 480)">
                     <rect x="453" y="490" width="7" height="48" rx="2" fill="#2C2018" />
                     <g class="board-sway">
-                      <rect x="414" y="464" width="86" height="30" rx="6" fill="#231812" stroke="#F3E9D2" stroke-opacity="0.45" stroke-width="1.5" />
-                      <text x="457" y="485" text-anchor="middle" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#F3E9D2">Aayushi &amp; Me</text>
+                      <rect x="405" y="460" width="104" height="34" rx="6" fill="#231812" stroke="#F3E9D2" stroke-opacity="0.45" stroke-width="1.5" />
+                      <text x="457" y="474" text-anchor="middle" font-family="Caveat, cursive" font-size="12" font-weight="700" fill="#F3E9D2">Amshuman and</text>
+                      <text x="457" y="488" text-anchor="middle" font-family="Caveat, cursive" font-size="12" font-weight="700" fill="#F3E9D2">Aayushi&#39;s Home</text>
                     </g>
                   </g>
                 </g>
@@ -415,9 +416,46 @@
       </section>
 
       <!-- ============ MAILBOX NOTE ============ -->
+      <!-- the nosy neighbour who peeks in from the corner -->
+      <div class="peeker" id="peeker" data-testid="peeker" aria-hidden="true">
+        <button class="peeker-hit" id="peekerHit" data-testid="peeker-dismiss" aria-label="Shoo the peeking girl away">
+          <span class="peeker-bubble" data-testid="peeker-bubble">(judging you) ehh</span>
+          <svg class="peeker-svg" viewBox="0 0 150 190" role="img" aria-label="A cartoon girl with long hair peeking around the corner with a judging face">
+            <!-- long hair behind, falling past the shoulders -->
+            <path d="M22,190 C14,140 16,92 28,62 C40,26 62,10 76,10 C90,10 112,26 124,62 C136,92 138,140 130,190 L108,190 C114,150 114,112 106,86 L46,86 C38,112 38,150 44,190 Z" fill="#2A1A14" />
+            <!-- shoulders / top -->
+            <path d="M26,190 C26,150 48,128 76,128 C104,128 126,150 126,190 Z" fill="#B4577E" />
+            <!-- neck -->
+            <rect x="66" y="104" width="20" height="26" rx="9" fill="#E0A97E" />
+            <!-- face -->
+            <path d="M42,70 C42,42 56,26 76,26 C96,26 110,42 110,70 C110,98 97,114 76,114 C55,114 42,98 42,70 Z" fill="#E9B98F" />
+            <!-- side-parted fringe -->
+            <path d="M36,62 C36,26 54,12 76,12 C98,12 116,26 116,62 C110,42 96,36 80,38 C66,40 50,44 36,62 Z" fill="#2A1A14" />
+            <!-- a loose strand -->
+            <path d="M44,44 C36,66 36,96 40,120" stroke="#2A1A14" stroke-width="7" fill="none" stroke-linecap="round" />
+            <!-- judging eyes, looking sideways -->
+            <path d="M52,58 C58,52 68,52 74,56" stroke="#2A1A14" stroke-width="4" fill="none" stroke-linecap="round" />
+            <path d="M84,50 C90,44 100,45 105,52" stroke="#2A1A14" stroke-width="4" fill="none" stroke-linecap="round" />
+            <ellipse cx="63" cy="72" rx="8.5" ry="6.5" fill="#fff" />
+            <ellipse cx="95" cy="72" rx="8.5" ry="6.5" fill="#fff" />
+            <circle cx="67" cy="73" r="3.8" fill="#1A1008" />
+            <circle cx="99" cy="73" r="3.8" fill="#1A1008" />
+            <!-- lashes -->
+            <path d="M55,66 L51,63" stroke="#1A1008" stroke-width="2.4" stroke-linecap="round" />
+            <path d="M103,66 L107,63" stroke="#1A1008" stroke-width="2.4" stroke-linecap="round" />
+            <!-- unimpressed little mouth -->
+            <path d="M66,93 C73,89 83,89 90,92" stroke="#A9544B" stroke-width="4" fill="none" stroke-linecap="round" />
+            <circle cx="50" cy="85" r="5.5" fill="#E79A8A" opacity="0.5" />
+            <circle cx="104" cy="85" r="5.5" fill="#E79A8A" opacity="0.5" />
+            <!-- tiny earring -->
+            <circle cx="43" cy="80" r="2.6" fill="#FFC478" />
+          </svg>
+        </button>
+      </div>
+
       <div class="mailbox-pop" id="mailboxPop" data-testid="mailbox-note-card" role="dialog" aria-label="A note from the mailbox" aria-hidden="true">
         <span class="wax-seal" aria-hidden="true"></span>
-        <p class="note-text">Something special is being prepared&hellip;</p>
+        <p class="note-text">Dear Aayushi, your whole circle is rooting for you.</p>
         <button class="note-close" id="noteCloseBtn" data-testid="mailbox-note-close" aria-label="Close the note">&#10005;</button>
       </div>
 

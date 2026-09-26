@@ -1,0 +1,59 @@
+{
+  "iteration": 2,
+  "passed": 6,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "House nameplate renamed to 'Amshuman and Aayushi's Home' across two lines, text stays inside the board",
+      "name": "house-signboard-two-lines",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "house-signboard has exactly 2 <text> nodes reading 'Amshuman and' / 'Aayushi's Home' (joined == \"Amshuman and Aayushi's Home\"); each text bounding box falls within the 104-wide wooden board rect (x 405-509). Screenshot: signboard-two-lines.png"
+    },
+    {
+      "criterion": "Mailbox letter updated, starts 'Dear Aayushi,' ends 'Your friends & family.', multi-line and unclipped",
+      "name": "mailbox-letter-updated",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": ".note-text starts with 'Dear Aayushi,' and ends with 'Your friends & family.'; rendered box height > 1.5x single line-height (multi-line via white-space:pre-line); scrollHeight <= clientHeight (not clipped). Screenshot: mailbox-letter.png"
+    },
+    {
+      "criterion": "Quiz Q5 answer locked to option 2, others rejected with retry",
+      "name": "quiz-q5-option2-correct",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Seeded progress to reach gameRoom, answered Q1-4 correctly (2,3,2,4) to land on Q5; quiz-option-1/3/4 each rejected (feedback shown, counter stayed on Q5); quiz-option-2 accepted and advanced counter to Q6. Screenshots: q5-before-correct.png, q5-advanced-to-q6.png"
+    },
+    {
+      "criterion": "Wrong-answer lines vary and are affectionate (>=3 distinct, no immediate repeat, includes teasing phrases)",
+      "name": "quiz-wrong-answer-lines-vary",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "5 consecutive wrong clicks on Q1 produced lines: ['hmmm bebo...', 'do you even know meee?? T-T', \"that's a no from me, love...\", 'baby... really?...', 'seems like u need to visit the boyfriend archives again baby'] - 5 distinct lines, no adjacent repeats, matches affectionate pattern (bebo/love/baby/do you even know meee). Screenshot: wrong-lines-collected.png"
+    },
+    {
+      "criterion": "Locked dance video (card 2) hides its thumbnail with padlock note while card 1 stays visible",
+      "name": "dance-locked-video-hidden",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Seeded progress {timeCapsule:true,gameRoom:true,danceRoom:false}; in room-danceroom, dance-card-1 video computed visibility='visible', dance-card-2 video computed visibility='hidden', card 2 contains text 'Play the first video to unlock this one'. Screenshot: dance-room-locked-card2.png"
+    },
+    {
+      "criterion": "Peeking girl appears off-screen top-left, judges, shows on 'show' class, dismiss hides her",
+      "name": "peeker-appears-and-dismiss",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "peeker element exists, peeker-bubble text == '(judging you) ehh'; initially lacks 'show' class; after JS-adding 'show' class (simulating the 30s auto timer) element becomes visible near top-left (box x<200,y<200); clicking peeker-dismiss (via direct DOM click, since its hit-box intentionally extends above the viewport for the head/shoulders-only peek effect) removes the 'show' class and hides it. Screenshots: peeker-visible.png, peeker-dismissed.png"
+    },
+    {
+      "criterion": "No regressions in the core journey (house entry, Time Capsule 12 memories/real media, full quiz w/ updated Q5 answer)",
+      "name": "gameroom-quiz-unlocks-danceroom (+ door1-unlocked-others-locked, memory-media-renders-with-transition, timecapsule-completion-unlocks-gameroom-only)",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-ran full pre-existing regression suite after updating the correct-answer sequence to [2,3,2,4,2,1,2,4,1,3] for the new Q5 rule: entering house, initial door lock state, 3-memory Time Capsule completion with real media (img/video src, no swap console errors, 0 failed requests), and full 10-question quiz completion all pass with no console errors and no requests >= 400."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "_readme": "Aayushi & Me - all fill-in-later content lives here. See HOW_TO_EDIT.md next to this file. Only simple text and file paths - never any code.",
   "exterior": {
-    "mailboxNote": "To our Aayushi — your whole circle is rooting for you as CA exam season comes around. We know how hard you've worked, and we have zero doubt you're going to do brilliantly. Rest when you need to, trust your prep, and know we're all in your corner. With so much love and belief, your friends & family."
+    "mailboxNote": "Dear Aayushi,\nYour whole circle is rooting for your as CA exam. We know how hard you've worked, and we have zero doubt you're going to do brilliantly. Just stay strong, we know how difficult it can get. Rest when you need to, trust your prep, and know we're all in your corner.\nWith so much love and belief,\nYour friends & family."
   },
   "hallway": {
     "background": "/hallway.jpg",
@@ -118,9 +118,16 @@
   "gameRoom": {
     "title": "Game Room",
     "wrongMessages": [
+      "do you even know meee?? T-T",
+      "cutiebaby that's not it, back to the boyfriend archives",
+      "nope bebo, try again na",
+      "wrong one love, think harder",
+      "baby... really? one more try",
       "seems like u need to visit the boyfriend archives again baby",
-      "wrong one, baby - back to the boyfriend archives with you",
-      "nope! revise the boyfriend archives, my love"
+      "hmmm bebo, my heart is slightly bruised. again?",
+      "cutiebaby noooo, that's not us",
+      "that's a no from me, love — revise pleaseee",
+      "arey baby, focus! one more go"
     ],
     "rightMessages": [
       "yesss that's my girl — you remember everything",
@@ -190,7 +197,7 @@
           "22st Oct, 2025",
           "21st Oct, 2026"
         ],
-        "correctIndex": null
+        "correctIndex": 1
       },
       {
         "id": 6,

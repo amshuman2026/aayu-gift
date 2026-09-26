@@ -603,6 +603,22 @@
 .dance-card.is-locked .pill {
   pointer-events: none;
 }
+/* no sneak peeks: the second clip's thumbnail stays hidden until it unlocks */
+.dance-card.is-locked .media > * {
+  visibility: hidden;
+}
+.dance-card.is-locked .media {
+  background: #0b0913;
+}
+.dance-card.is-locked .media::after {
+  content: "\1F512";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(26px, 4vw, 40px);
+  opacity: 0.55;
+}
 .lock-note {
   font-size: 12.5px;
   font-weight: 600;
@@ -725,4 +741,63 @@ body.reduced .swap {
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* ---------- the nosy neighbour peeking in from the top-left ---------- */
+.peeker {
+  position: fixed;
+  left: clamp(8px, 3vw, 46px);
+  top: 0;
+  z-index: 90;
+  transform: translateY(-104%) rotate(-7deg);
+  transition: transform 0.75s cubic-bezier(0.34, 1.4, 0.5, 1);
+  pointer-events: none;
+}
+.peeker.show {
+  transform: translateY(-6%) rotate(-3deg);
+  pointer-events: auto;
+}
+.peeker-hit {
+  position: relative;
+  display: block;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.peeker-svg {
+  width: clamp(88px, 11vw, 132px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55));
+  animation: peekSway 3.4s ease-in-out infinite;
+  transform-origin: 50% 0%;
+}
+@keyframes peekSway {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(2.5deg); }
+}
+.peeker-bubble {
+  position: absolute;
+  left: calc(100% - 6px);
+  top: 18%;
+  white-space: nowrap;
+  padding: 9px 15px;
+  border-radius: 14px 14px 14px 3px;
+  background: #F3E9D2;
+  color: #2A1D15;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: clamp(15px, 1.6vw, 20px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(6px) scale(0.9);
+  transition: opacity 0.4s ease 0.45s, transform 0.4s ease 0.45s;
+}
+.peeker.show .peeker-bubble {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+body.reduced .peeker-svg {
+  animation: none;
 }

@@ -394,7 +394,17 @@
     renderQuestion();
   }
 
-  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  /* never repeat the line she just saw */
+  const lastPicked = {};
+  function pick(arr, key) {
+    if (arr.length < 2) return arr[0];
+    let i = Math.floor(Math.random() * arr.length);
+    if (key) {
+      while (i === lastPicked[key]) i = Math.floor(Math.random() * arr.length);
+      lastPicked[key] = i;
+    }
+    return arr[i];
+  }
 
   function renderQuestion() {
     const c = content.gameRoom;
@@ -465,12 +475,12 @@
       void btn.offsetWidth;
       btn.classList.add("wrong");
       qRefs.fb.classList.remove("good");
-      qRefs.fb.textContent = pick(c.wrongMessages);
+      qRefs.fb.textContent = pick(c.wrongMessages, "wrong");
       return;
     }
     btn.classList.add("right");
     qRefs.fb.classList.add("good");
-    qRefs.fb.textContent = pick(c.rightMessages);
+    qRefs.fb.textContent = pick(c.rightMessages, "right");
     qRefs.opts.querySelectorAll(".opt").forEach((b) => (b.disabled = true));
     window.setTimeout(
       () => {
@@ -592,6 +602,31 @@
       }
     })
     .catch(() => toast("Couldn't load the rooms \u2014 please refresh."));
+
+  /* ---------------- the peeking girl ---------------- */
+  (function peeking() {
+    const peeker = document.getElementById("peeker");
+    const hit = document.getElementById("peekerHit");
+    if (!peeker || !hit) return;
+    let shown = 0;
+    let timer = 0;
+    const hide = () => {
+      peeker.classList.remove("show");
+      peeker.setAttribute("aria-hidden", "true");
+    };
+    const show = () => {
+      if (shown >= 3) return;
+      shown += 1;
+      peeker.classList.add("show");
+      peeker.setAttribute("aria-hidden", "false");
+      if (shown < 3) timer = window.setTimeout(show, 30000);
+    };
+    hit.addEventListener("click", () => {
+      hide();
+      if (shown >= 3) window.clearTimeout(timer);
+    });
+    timer = window.setTimeout(show, 30000);
+  })();
 
   /* ---------------- start over ---------------- */
   const resetBtn = document.getElementById("resetProgressBtn");
