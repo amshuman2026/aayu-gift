@@ -47,7 +47,9 @@ correctly · Dance Room = both videos played once · Final Room = video played.
 ### Rooms
 1. **Time Capsule** — dim scattered photo-tile collage background, 12 video slots, one at a time, with
    prev/next, a numbered strip, and an (empty by default) caption under the video.
-2. **Game Room** — 10 photo questions, 4 options each. Wrong → teasing line and she can retry
+2. **Game Room** — 10 photo questions (all 13 real media files live in `public/media/`:
+   `quiz-1…quiz-7`, `quiz-8.mp4` for the video question, `quiz-9a…quiz-9d` as Q9's four image
+   answers, `quiz-10`; Q5's `correctIndex` is still `null` = accepts any answer until confirmed), 4 options each. Wrong → teasing line and she can retry
    (retry-until-correct); right → warm line, then auto-advance. Question 10 shows a completion
    screen.
 3. **Dance Room** — exactly 2 videos; video 2 greyed out with "Play the first video to unlock
