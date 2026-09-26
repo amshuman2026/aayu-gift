@@ -222,6 +222,9 @@
   /* ---------------- room 1 · time capsule ---------------- */
   let tcIndex = 0;
   let tcRefs = null;
+  /* the room counts as "visited" once she has actually looked through a few
+     memories (or played one) — not the instant a photo finishes loading */
+  const tcSeen = new Set();
 
   function buildTimeCapsule() {
     const c = content.timeCapsule;
@@ -296,15 +299,37 @@
     tcRefs.counter.textContent = "Memory " + (tcIndex + 1) + " of " + list.length;
     tcRefs.caption.textContent = m.caption || "";
     tcRefs.stage.textContent = "";
-    const frame = mediaFrame(
-      m.video,
-      m.poster,
-      "Memory " + (tcIndex + 1),
-      m.video ? "" : "this video slot is waiting for its file",
-      () => markDone("timeCapsule"),
-      "memory-player"
-    );
-    tcRefs.stage.appendChild(frame.el);
+    if (m.photo) {
+      /* a still memory */
+      const box = document.createElement("div");
+      box.className = "media";
+      box.dataset.testid = "memory-player";
+      const img = document.createElement("img");
+      img.src = m.photo;
+      img.alt = m.caption || "Memory " + (tcIndex + 1);
+      img.className = "memory-photo";
+      img.dataset.testid = "memory-photo";
+      box.appendChild(img);
+      tcRefs.stage.appendChild(box);
+    } else {
+      const frame = mediaFrame(
+        m.video,
+        m.poster,
+        "Memory " + (tcIndex + 1),
+        m.video ? "" : "this slot is waiting for its photo or video",
+        () => markDone("timeCapsule"),
+        "memory-player"
+      );
+      tcRefs.stage.appendChild(frame.el);
+    }
+    tcSeen.add(tcIndex);
+    if (tcSeen.size >= 3) markDone("timeCapsule");
+    /* the reveal: each memory swings in like a turned page */
+    if (!REDUCED) {
+      tcRefs.stage.classList.remove("swap");
+      void tcRefs.stage.offsetWidth;
+      tcRefs.stage.classList.add("swap");
+    }
     tcRefs.strip.querySelectorAll(".tc-dot").forEach((d, i) => {
       d.classList.toggle("active", i === tcIndex);
     });
@@ -567,6 +592,17 @@
       }
     })
     .catch(() => toast("Couldn't load the rooms \u2014 please refresh."));
+
+  /* ---------------- start over ---------------- */
+  const resetBtn = document.getElementById("resetProgressBtn");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      ORDER.forEach((id) => (done[id] = false));
+      save();
+      paintDoors();
+      toast("Doors locked again \u2014 start with the Time Capsule.");
+    });
+  }
 
   /* ---------------- hallway parallax (a few pixels of life) ---------------- */
   if (!REDUCED && hall) {

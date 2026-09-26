@@ -41,11 +41,16 @@ Sequential: `timeCapsule → gameRoom → danceRoom → finalDoor`. Only the Tim
 a first visit. Persisted in `localStorage["aayushiHouse.progress.v1"]` as
 `{timeCapsule, gameRoom, danceRoom, finalDoor: boolean}`.
 
-Completion rules: Time Capsule = play at least one memory (12 slots) · Game Room = answer all 10 questions
+The hallway HUD also carries a "Lock the doors again" button (`reset-progress-button`) that
+clears stored progress.
+
+Completion rules: Time Capsule = view 3 distinct memories or play one · Game Room = answer all 10 questions
 correctly · Dance Room = both videos played once · Final Room = video played.
 
 ### Rooms
-1. **Time Capsule** — dim scattered photo-tile collage background, 12 video slots, one at a time, with
+1. **Time Capsule** — dim scattered photo-tile collage background, 12 slots that take either a
+   `photo` or a `video` (slots 1-5 filled: memory-1.jpeg, memory-2.mp4, memory-3/4/5.jpeg), each
+   revealed with a page-turn `swap` animation; completes once 3 distinct memories are viewed, one at a time, with
    prev/next, a numbered strip, and an (empty by default) caption under the video.
 2. **Game Room** — 10 photo questions (all 13 real media files live in `public/media/`:
    `quiz-1…quiz-7`, `quiz-8.mp4` for the video question, `quiz-9a…quiz-9d` as Q9's four image

@@ -1,0 +1,66 @@
+{
+  "iteration": 1,
+  "passed": 8,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "BUG: on a first visit with empty localStorage, only door 1 is unlocked",
+      "name": "door1-unlocked-others-locked",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "hall-door-timecapsule has class 'unlocked'; gameroom/danceroom/finaldoor all have class 'locked' on clean localStorage. Screenshot: hallway-initial.png"
+    },
+    {
+      "criterion": "BUG: clicking a locked door does not open any room",
+      "name": "locked-door-click-shows-toast-no-open",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Force-clicking disabled hall-door-gameroom shows toast 'View the room before this to unlock.'; no [data-testid^=room-] element has class 'open'. Screenshot: locked-click-toast.png"
+    },
+    {
+      "criterion": "BUG: merely opening the Time Capsule does not unlock the Game Room",
+      "name": "opening-timecapsule-alone-no-unlock",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Opened room-timecapsule from clean state, clicked back-to-hallway-timecapsule immediately without paging memories; hall-door-gameroom remained 'locked'. Screenshot: after-back-no-progress.png"
+    },
+    {
+      "criterion": "Time Capsule completion unlocks only the next door",
+      "name": "timecapsule-completion-unlocks-gameroom-only",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "After 2x memory-next (3 distinct memories: counter reached 'Memory 3 of 12') and back to hallway, hall-door-gameroom became 'unlocked' while danceroom/finaldoor stayed 'locked'. Screenshot: after-timecapsule-complete.png"
+    },
+    {
+      "criterion": "Sequential chain continues through the Game Room",
+      "name": "gameroom-quiz-unlocks-danceroom",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Completed 10-question quiz with answers [2,3,2,4,1,1,2,4,1,3] (Q5 accepts any option), quiz-complete became visible, back to hallway -> hall-door-danceroom 'unlocked', hall-door-finaldoor stayed 'locked'. Screenshot: after-quiz-complete.png"
+    },
+    {
+      "criterion": "Progress persists and stays sequential across a reload",
+      "name": "progress-persists-across-reload",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Completed Time Capsule, verified localStorage key 'aayushiHouse.progress.v1' set to timeCapsule:true, page.reload(), re-entered house: gameroom 'unlocked', danceroom/finaldoor still 'locked'. Note: initial test attempt falsely flagged this as a bug due to a test-authoring mistake (addInitScript re-clearing localStorage on reload); corrected script confirms the app behavior is correct. Screenshot: after-reload.png"
+    },
+    {
+      "criterion": "Reset button re-locks doors 2-4",
+      "name": "reset-progress-relocks-doors",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "With gameroom unlocked via Time Capsule completion, clicking reset-progress-button returned gameroom/danceroom/finaldoor to class 'locked'. Screenshot: after-reset.png"
+    },
+    {
+      "criterion": "Time Capsule memories render real media with a transition",
+      "name": "memory-media-renders-with-transition",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Memory 1: img[data-testid=memory-photo] src contains /media/memory-1.jpeg. Memory 2: video element visible, memory-stage gained class 'swap'. Memory 3: img src contains /media/memory-3.jpeg. memory-counter text matched 'Memory N of 12' at each step. No console errors, no requests >= 400 (arrays empty)."
+    }
+  ]
+}

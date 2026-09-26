@@ -33,73 +33,85 @@
         "id": 1,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": "/media/memory-1.jpeg"
       },
       {
         "id": 2,
-        "video": "",
+        "video": "/media/memory-2.mp4",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       },
       {
         "id": 3,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": "/media/memory-3.jpeg"
       },
       {
         "id": 4,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": "/media/memory-4.jpeg"
       },
       {
         "id": 5,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": "/media/memory-5.jpeg"
       },
       {
         "id": 6,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       },
       {
         "id": 7,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       },
       {
         "id": 8,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       },
       {
         "id": 9,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       },
       {
         "id": 10,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       },
       {
         "id": 11,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       },
       {
         "id": 12,
         "video": "",
         "poster": "",
-        "caption": ""
+        "caption": "",
+        "photo": ""
       }
     ]
   },

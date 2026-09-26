@@ -242,7 +242,7 @@
 .toast {
   position: absolute;
   left: 50%;
-  top: 7%;
+  top: 2%;
   z-index: 40;
   transform: translate(-50%, -14px);
   max-width: min(420px, 86vw);
@@ -687,4 +687,42 @@ body.reduced .caption {
   font-size: clamp(15px, 1.7vw, 19px);
   line-height: 1.35;
   max-width: 46ch;
+}
+
+/* a still photo memory + the page-turn reveal between memories */
+.memory-photo {
+  max-width: 100%;
+  max-height: var(--frame-h);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #000;
+  border-radius: 12px;
+}
+.swap {
+  animation: memorySwap 0.62s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+@keyframes memorySwap {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(-14deg) translateX(34px) scale(0.965);
+    filter: blur(7px) brightness(0.7);
+  }
+  60% {
+    filter: blur(0) brightness(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0) translateX(0) scale(1);
+    filter: blur(0) brightness(1);
+  }
+}
+body.reduced .swap {
+  animation: none;
+}
+.hud-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }

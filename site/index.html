@@ -404,7 +404,10 @@
 
         <div class="hall-hud">
           <p class="hall-title" data-testid="hallway-title">Four doors. Start with the Time Capsule.</p>
-          <button class="step-outside" id="stepOutsideBtn" data-testid="step-outside-button">Step back outside</button>
+          <div class="hud-actions">
+            <button class="step-outside" id="resetProgressBtn" data-testid="reset-progress-button">Lock the doors again</button>
+            <button class="step-outside" id="stepOutsideBtn" data-testid="step-outside-button">Step back outside</button>
+          </div>
         </div>
 
         <p class="toast" id="hallToast" data-testid="locked-door-message" role="status" aria-live="polite"></p>
