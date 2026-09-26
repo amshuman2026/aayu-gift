@@ -416,6 +416,10 @@
         const oimg = document.createElement("img");
         oimg.src = value;
         oimg.alt = "Option " + (i + 1);
+        oimg.addEventListener("error", () => {
+          oimg.remove();
+          b.textContent = "Option " + (i + 1) + " \u2014 photo coming";
+        });
         b.appendChild(oimg);
         b.setAttribute("aria-label", "Option " + (i + 1));
       } else {

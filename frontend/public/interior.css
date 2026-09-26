@@ -461,6 +461,7 @@
 
 /* ---------- room 2 · quiz ---------- */
 .quiz {
+  --shot-h: clamp(220px, 44vh, 430px);
   width: min(720px, 100%);
   display: grid;
   gap: 14px;
@@ -468,7 +469,9 @@
 }
 .quiz-photo {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* a definite height (not aspect-ratio) so the image's max-height: 100% resolves
+     and portrait photos letterbox instead of overflowing the box */
+  height: var(--shot-h);
   border-radius: 16px;
   border: 1px solid rgba(255, 196, 120, 0.22);
   background: #000;
@@ -481,10 +484,19 @@
 /* never crop her photos — letterbox them on black instead */
 .quiz-photo img,
 .quiz-photo video {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  /* percentage max-heights don't constrain a centred grid item, so use the
+     same absolute length the box is sized with */
+  max-height: var(--shot-h);
+  width: auto;
+  height: auto;
   object-fit: contain;
   background: #000;
+}
+.quiz-photo video {
+  /* a definite box + contain = letterboxed video, no crop before metadata loads */
+  width: 100%;
+  height: var(--shot-h);
 }
 .opt.opt-img {
   padding: 8px;
@@ -492,8 +504,10 @@
   place-items: center;
 }
 .opt.opt-img img {
-  width: 100%;
-  height: clamp(150px, 26vh, 260px);
+  max-width: 100%;
+  max-height: clamp(150px, 26vh, 260px);
+  width: auto;
+  height: auto;
   object-fit: contain;
   background: #000;
   border-radius: 8px;
