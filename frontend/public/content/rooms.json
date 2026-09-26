@@ -1,7 +1,7 @@
 {
   "_readme": "Aayushi & Me - all fill-in-later content lives here. See HOW_TO_EDIT.md next to this file. Only simple text and file paths - never any code.",
   "exterior": {
-    "mailboxNote": "To our Aayushi \u2014 your whole circle is rooting for you as CA exam season comes around. We know how hard you've worked, and we have zero doubt you're going to do brilliantly. Rest when you need to, trust your prep, and know we're all in your corner. With so much love and belief, your friends & family."
+    "mailboxNote": "To our Aayushi — your whole circle is rooting for you as CA exam season comes around. We know how hard you've worked, and we have zero doubt you're going to do brilliantly. Rest when you need to, trust your prep, and know we're all in your corner. With so much love and belief, your friends & family."
   },
   "hallway": {
     "background": "/hallway.jpg",
@@ -111,7 +111,7 @@
       "nope! revise the boyfriend archives, my love"
     ],
     "rightMessages": [
-      "yesss that's my girl \u2014 you remember everything",
+      "yesss that's my girl — you remember everything",
       "perfect. you really do pay attention to us",
       "correct, baby. i'm so proud of you"
     ],
@@ -122,123 +122,125 @@
     "questions": [
       {
         "id": 1,
-        "photo": "",
-        "question": "Where did we meet for the very first time?",
+        "photo": "/media/quiz-1.jpeg",
+        "question": "The first time we attended malayalam festival in which we had 'sadhya' is called",
         "options": [
-          "The old coffee place",
-          "College library",
-          "A friend's birthday",
-          "On a train"
+          "Vishu",
+          "Onam",
+          "Sonam Pandey",
+          "Bakrid"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
       {
         "id": 2,
-        "photo": "",
-        "question": "What do I call you when you're being dramatic?",
+        "photo": "/media/quiz-2.png",
+        "question": "Which café did we go to in this photo",
         "options": [
-          "baby",
-          "aayu",
-          "drama queen",
-          "madam ji"
+          "Panchakattu dosa",
+          "Sasural house",
+          "Babylon Banjara",
+          "Babylon kerala"
         ],
         "correctIndex": 2
       },
       {
         "id": 3,
-        "photo": "",
-        "question": "Our go-to comfort movie?",
+        "photo": "/media/quiz-3.png",
+        "question": "This was from which date place",
         "options": [
-          "Dhamaal",
-          "Zindagi Na Milegi Dobara",
-          "Barfi",
-          "Queen"
+          "Bauna Ali hills",
+          "Moula ali hills",
+          "Sasural's house",
+          "Mouna Ali hills"
         ],
         "correctIndex": 1
       },
       {
         "id": 4,
-        "photo": "",
-        "question": "Which song did we play on loop that one whole week?",
+        "photo": "/media/quiz-4.png",
+        "question": "If we ever got into a physical fight, who would win?",
         "options": [
-          "Kesariya",
-          "Tum Se Hi",
-          "Pasoori",
-          "Channa Mereya"
+          "Aakruti",
+          "Amshuman because he always wanted to hit you",
+          "Fight no no bad bad",
+          "Aayushi, cause shes a strong independant woman"
         ],
         "correctIndex": 3
       },
       {
         "id": 5,
-        "photo": "",
-        "question": "What did I order the first time we ate out together?",
+        "photo": "/media/quiz-5.png",
+        "question": "This day was on my most memorable days of my life, what was the date?",
         "options": [
-          "Paneer tikka",
-          "Cold coffee and fries",
-          "Maggi",
-          "Butter chicken"
+          "21st Oct, 2002",
+          "21st Oct, 2025",
+          "22st Oct, 2025",
+          "21st Oct, 2026"
         ],
-        "correctIndex": 1
+        "correctIndex": null
       },
       {
         "id": 6,
-        "photo": "",
-        "question": "Where did we take our first proper photo together?",
+        "photo": "/media/quiz-6.png",
+        "question": "This was a very special day, you thought I wanted to kill you, but I just wanted to show my gratitude for a wonderful and rememberable first date. Where was this place",
         "options": [
-          "Terrace at night",
-          "Outside the metro station",
-          "In the car",
-          "At the beach"
+          "Country club",
+          "Koliba",
+          "TTeokbokki",
+          "Sasural's ghar"
         ],
         "correctIndex": 0
       },
       {
         "id": 7,
-        "photo": "",
-        "question": "What time of night do our best conversations start?",
+        "photo": "/media/quiz-7.jpeg",
+        "question": "what do I call you whenever you get slightly mad at me or grumpy",
         "options": [
-          "Right after dinner",
-          "Around 11",
-          "Past 1 a.m.",
-          "Early morning"
-        ],
-        "correctIndex": 2
-      },
-      {
-        "id": 8,
-        "photo": "",
-        "question": "Which of these did I gift you first?",
-        "options": [
-          "A letter",
-          "A bracelet",
-          "A playlist",
-          "A teddy"
-        ],
-        "correctIndex": 0
-      },
-      {
-        "id": 9,
-        "photo": "",
-        "question": "What's the one thing I always tease you about?",
-        "options": [
-          "Your sneezes",
-          "Your terrible sense of direction",
-          "Your midnight cravings",
-          "Your alarm snoozing"
+          "chachaji",
+          "Cutuuubabyyyy mera",
+          "Madam ji",
+          "Aayushi Shroff"
         ],
         "correctIndex": 1
       },
       {
-        "id": 10,
+        "id": 8,
         "photo": "",
-        "question": "How do we end every single call?",
+        "video": "/media/quiz-8.mp4",
+        "question": "We were on a trip in this video. Where did we go for our first trip together?",
         "options": [
-          "Goodnight",
-          "One more minute",
-          "I love you more",
-          "You hang up first"
+          "Karachi, pakistan",
+          "Monesh anna ka adda",
+          "ganktok, sikkim",
+          "Darjeeling"
         ],
         "correctIndex": 3
+      },
+      {
+        "id": 9,
+        "photo": "",
+        "optionImages": [
+          "/media/quiz-9a.jpeg",
+          "/media/quiz-9b.jpeg",
+          "/media/quiz-9c.png",
+          "/media/quiz-9d.png"
+        ],
+        "question": "Which one is my favourite aayushi photo",
+        "options": [],
+        "correctIndex": 0
+      },
+      {
+        "id": 10,
+        "photo": "/media/quiz-10.png",
+        "question": "And for the final question baby. How much do I love my cassata icecream baby",
+        "options": [
+          "I hate it",
+          "I want to wear",
+          "I love you so much that it gets nullified",
+          "I hate it"
+        ],
+        "correctIndex": 2
       }
     ]
   },
@@ -266,6 +268,6 @@
     "emptyText": "A video message is waiting to be recorded for you.",
     "video": "",
     "poster": "",
-    "caption": "That's the whole idea behind this house, Aayushi \u2014 you have always been my home."
+    "caption": "That's the whole idea behind this house, Aayushi — you have always been my home."
   }
 }

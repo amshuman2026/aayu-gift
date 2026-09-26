@@ -471,17 +471,32 @@
   aspect-ratio: 16 / 9;
   border-radius: 16px;
   border: 1px solid rgba(255, 196, 120, 0.22);
-  background: linear-gradient(160deg, #2b2032, #160f20);
+  background: #000;
   display: grid;
   place-items: center;
   color: rgba(243, 233, 210, 0.55);
   font-size: 13px;
   overflow: hidden;
 }
-.quiz-photo img {
+/* never crop her photos — letterbox them on black instead */
+.quiz-photo img,
+.quiz-photo video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #000;
+}
+.opt.opt-img {
+  padding: 8px;
+  display: grid;
+  place-items: center;
+}
+.opt.opt-img img {
+  width: 100%;
+  height: clamp(150px, 26vh, 260px);
+  object-fit: contain;
+  background: #000;
+  border-radius: 8px;
 }
 .quiz-q {
   font-family: "Playfair Display", "Lora", Georgia, serif;

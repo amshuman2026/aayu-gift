@@ -378,20 +378,49 @@
     qRefs.fb.textContent = "";
     qRefs.fb.classList.remove("good");
     qRefs.photo.textContent = "";
-    if (item.photo) {
+    const hasImageOptions = Array.isArray(item.optionImages) && item.optionImages.length > 0;
+    if (item.video) {
+      /* Q8 is a video, not a photo */
+      const v = document.createElement("video");
+      v.src = item.video;
+      v.controls = true;
+      v.preload = "metadata";
+      v.playsInline = true;
+      v.dataset.testid = "quiz-video";
+      qRefs.photo.style.display = "";
+      qRefs.photo.appendChild(v);
+    } else if (item.photo) {
       const img = document.createElement("img");
       img.src = item.photo;
       img.alt = "";
+      img.addEventListener("error", () => {
+        img.remove();
+        qRefs.photo.textContent = "photo for question " + (qIndex + 1) + " goes here";
+      });
+      qRefs.photo.style.display = "";
       qRefs.photo.appendChild(img);
+    } else if (hasImageOptions) {
+      /* Q9's answers are the pictures — it never had a header photo */
+      qRefs.photo.style.display = "none";
     } else {
+      qRefs.photo.style.display = "";
       qRefs.photo.textContent = "photo for question " + (qIndex + 1) + " goes here";
     }
     qRefs.q.textContent = item.question || "Question " + (qIndex + 1);
     qRefs.opts.textContent = "";
-    item.options.forEach((label, i) => {
+    const list = hasImageOptions ? item.optionImages : item.options;
+    list.forEach((value, i) => {
       const b = document.createElement("button");
-      b.className = "opt";
-      b.textContent = label || "option " + (i + 1);
+      b.className = "opt" + (hasImageOptions ? " opt-img" : "");
+      if (hasImageOptions) {
+        const oimg = document.createElement("img");
+        oimg.src = value;
+        oimg.alt = "Option " + (i + 1);
+        b.appendChild(oimg);
+        b.setAttribute("aria-label", "Option " + (i + 1));
+      } else {
+        b.textContent = value || "option " + (i + 1);
+      }
       b.dataset.testid = "quiz-option-" + (i + 1);
       b.addEventListener("click", () => answer(b, i));
       qRefs.opts.appendChild(b);
@@ -401,7 +430,8 @@
   function answer(btn, i) {
     const c = content.gameRoom;
     const item = c.questions[qIndex];
-    if (i !== item.correctIndex) {
+    /* correctIndex null = answer not decided yet (Q5) — accept anything rather than dead-end */
+    if (item.correctIndex !== null && i !== item.correctIndex) {
       btn.classList.remove("wrong");
       void btn.offsetWidth;
       btn.classList.add("wrong");
