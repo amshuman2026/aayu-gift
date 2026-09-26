@@ -49,7 +49,7 @@ correctly · Dance Room = both videos played once · Final Room = video played.
 
 ### Rooms
 1. **Time Capsule** — dim scattered photo-tile collage background, 12 slots that take either a
-   `photo` or a `video` (slots 1-5 filled: memory-1.jpeg, memory-2.mp4, memory-3/4/5.jpeg), each
+   `photo` or a `video` (slots 1-10 filled: memory-1/3/4/5/6/8/9/10.jpeg photos, memory-2.mp4 and memory-7.mp4 videos; 11-12 still empty), each
    revealed with a page-turn `swap` animation; completes once 3 distinct memories are viewed, one at a time, with
    prev/next, a numbered strip, and an (empty by default) caption under the video.
 2. **Game Room** — 10 photo questions (all 13 real media files live in `public/media/`:
