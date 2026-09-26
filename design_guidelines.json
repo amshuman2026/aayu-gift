@@ -1,0 +1,267 @@
+{
+  "theme": "dark",
+  "project_title": "Aayushi & Me — Interactive Anniversary House (Stage 1)",
+  "emotional_tone": "Intimate, hand-crafted, storybook miniature, deeply romantic night atmosphere with warm glowing interiors against a moonlit indigo sky",
+  "design_archetype": "Organic, Earthy & Storybook Miniature (Wood, Warm Amber Light, Night Forest, Hand-painted Signage)",
+  "typography": {
+    "font_family_body": "Quicksand, Nunito, 'DM Sans', -apple-system, sans-serif",
+    "font_family_script": "'Caveat', cursive",
+    "font_family_heading": "'Playfair Display Variable', 'Lora Variable', Georgia, serif",
+    "font_import_instructions": "Import @fontsource-variable/dm-sans and @fontsource-variable/lora or @fontsource/poppins in frontend/src/index.css; include Google Font link or @fontsource for Caveat and Quicksand in index.html for the script storytelling beats.",
+    "scale_px": {
+      "display": 52,
+      "h1": 40,
+      "h2": 30,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "typesetting_rules": {
+      "story_beats": "font-family: 'Caveat', cursive; font-size: 26px; line-height: 1.3; tracking: normal;",
+      "ui_body": "font-family: 'Quicksand', 'DM Sans', sans-serif; font-size: 15px; line-height: 1.5; font-weight: 500;",
+      "signboard_text": "font-family: 'Caveat', cursive; font-size: 18px; font-weight: 700; letter-spacing: 0.05em; color: #F3E9D2;",
+      "title_heading": "font-family: 'Lora Variable', Georgia, serif; font-size: 32px; font-weight: 600; letter-spacing: -0.02em;"
+    }
+  },
+  "colors": {
+    "palette_tokens": {
+      "midnight": "#12163B",
+      "dusk_purple": "#453B63",
+      "warm_cream": "#F3E9D2",
+      "warm_amber": "#FFB35C",
+      "amber_glow": "#FFA333",
+      "timber_brown": "#3B2A20",
+      "timber_dark": "#231812",
+      "muted_green": "#52684F",
+      "night_foliage": "#2C3E2D",
+      "ink_shadow": "#201A2E",
+      "firefly_glow": "#D9F27A",
+      "moonlight_wash": "rgba(180, 205, 255, 0.15)",
+      "starlight": "#EAF0FF"
+    },
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#12163B",
+        "on_bg": "#F3E9D2",
+        "on_bg_muted": "#B5AEC6"
+      },
+      {
+        "name": "sky_gradient",
+        "kind": "gradient",
+        "contrast_against": "#12163B",
+        "guarantee": "radial-gradient(ellipse at 70% 20%, #453B63 0%, #201A2E 45%, #12163B 85%)",
+        "on_bg": "#F3E9D2",
+        "on_bg_muted": "#C2BCD4",
+        "roles": {
+          "link": "#FFB35C",
+          "accent": "#D9F27A",
+          "error": "#FF8A8A",
+          "success": "#D9F27A"
+        }
+      },
+      {
+        "name": "night_scene",
+        "kind": "gradient",
+        "contrast_against": "#201A2E",
+        "guarantee": "linear-gradient(to bottom, #12163B 0%, #201A2E 60%, #15111F 100%)",
+        "on_bg": "#F3E9D2",
+        "on_bg_muted": "#B5AEC6",
+        "roles": {
+          "glow": "#FFB35C",
+          "firefly": "#D9F27A"
+        }
+      },
+      {
+        "name": "mailbox_note",
+        "kind": "solid",
+        "bg": "#F3E9D2",
+        "on_bg": "#3B2A20",
+        "on_bg_muted": "#5C4638"
+      },
+      {
+        "name": "door_panel",
+        "kind": "solid",
+        "bg": "#3B2A20",
+        "on_bg": "#F3E9D2",
+        "on_bg_muted": "#FFB35C"
+      },
+      {
+        "name": "signboard",
+        "kind": "solid",
+        "bg": "#231812",
+        "on_bg": "#F3E9D2",
+        "on_bg_muted": "#FFB35C"
+      },
+      {
+        "name": "hud_controls",
+        "kind": "glass",
+        "contrast_against": "#1B172E",
+        "guarantee": "backdrop-blur-md bg-[#201A2E]/80 border border-[#F3E9D2]/20 shadow-[0_8px_32px_rgba(0,0,0,0.4)]",
+        "on_bg": "#F3E9D2",
+        "on_bg_muted": "#B5AEC6"
+      },
+      {
+        "name": "interior_reveal",
+        "kind": "gradient",
+        "contrast_against": "#2A1810",
+        "guarantee": "radial-gradient(circle at center, #FFB35C 0%, #452414 40%, #201A2E 100%)",
+        "on_bg": "#F3E9D2",
+        "on_bg_muted": "#FFE2B8",
+        "roles": {
+          "accent": "#FFB35C",
+          "link": "#F3E9D2"
+        }
+      }
+    ],
+    "accent": "#FFB35C",
+    "on_accent": "#201A2E"
+  },
+  "entry_surfaces": {
+    "/": "full-screen painterly night house scene with layered parallax, ambient animations, interactive front door, mailbox, easter eggs, and cinematic interior entry sequence"
+  },
+  "visual_enhancers": {
+    "lighting_model": {
+      "moonlight": "Cool silvery-blue top-right diffuse wash (rgba(180, 205, 255, 0.12)) across roof ridges and foliage edges",
+      "window_glow": "Warm amber (#FFB35C) radial gradient with slow breathing pulse (8s cycle, 0.75 to 0.95 opacity)",
+      "porch_lantern": "Focal warm point (#FFA333) casting soft circular light onto porch steps and signboard with subtle rare 12-18s organic flicker",
+      "firefly_glow": "Sharp chartreuse-yellow (#D9F27A) point lights with 3px Gaussian blur halo (filter: drop-shadow(0 0 6px #D9F27A))",
+      "path_illumination": "Faint amber glow bleeding from porch light onto stepping stones"
+    },
+    "texture_and_style": {
+      "painterly_treatment": "Use soft organic SVG vector paths with hand-drawn subtle irregularities (curved roofline, organic stone path, rounded window arches)",
+      "wood_grain_accents": "Rich timber brown (#3B2A20) planks on door and porch with darker grain shadows (#231812)",
+      "smoke_particle_effect": "Semi-transparent warm grey-cream puffs (#F3E9D2/35) drifting upward in wavy sinusoidal paths (8-12s cycle)",
+      "curtain_sway": "Delicate lace curtain silhouette in upper left window undulating softly (4-6s cycle)",
+      "cat_silhouette": "Cozy black cat silhouette (#15111F) perched in upper glowing window, tail swishing occasionally and stretching on click"
+    }
+  },
+  "scene_architecture_and_layers": {
+    "layer_0_sky": {
+      "description": "Deep midnight backdrop (#12163B to #453B63) with crescent moon (clickable easter egg), drifting translucent clouds (60-120s loop), and 40+ twinkling stars with randomized CSS animation delays.",
+      "parallax_factor": 0.02
+    },
+    "layer_1_distant_hills_trees": {
+      "description": "Dark silhouette of rolling forest ridge and pine trees (#201A2E) providing atmospheric depth.",
+      "parallax_factor": 0.05
+    },
+    "layer_2_midground_house_and_garden": {
+      "description": "The centerpiece: asymmetrical two-story storybook house, timber porch, hanging lantern, glowing windows, stone chimney with smoke, carved signboard 'Aayushi & Me', curved flagstone pathway, cozy hedges, and mailbox.",
+      "parallax_factor": 0.1
+    },
+    "layer_3_foreground_foliage_and_fireflies": {
+      "description": "Soft dark silhouette branches and tall grass at the viewport borders with 8-12 wandering glowing fireflies that react to cursor/touch.",
+      "parallax_factor": 0.18
+    },
+    "layer_4_hud_and_story_overlay": {
+      "description": "Timed narrative hints ('There's something waiting inside…', 'Click the front door'), sound toggle button (Ambient/Lofi), easter egg counter badge (5 hidden moments), mailbox modal, and room preview drawer.",
+      "parallax_factor": 0.0
+    }
+  },
+  "interactive_mechanics_and_easter_eggs": {
+    "1_front_door_entry_sequence": {
+      "trigger": "Click or Enter key on front door",
+      "steps": [
+        "1. Camera smooth CSS zoom & pan toward front porch (scale: 1.55, translateY: 12%) over 1.6s",
+        "2. Porch light blooms warmer and brighter (intensity +60%)",
+        "3. Door handle turns down 25deg, door hinges open with transform: perspective(800px) rotateY(-78deg)",
+        "4. Radiant golden warm interior light blooms outwards from doorway (radial light shaft)",
+        "5. Cross-fade transition to interior placeholder sanctum with soft ambient chime",
+        "6. Display elegant Caveat handwritten typography: 'Welcome home. Our story lives inside every room.'",
+        "7. Provide button to 'Step Back Outside' or preview the 10 upcoming relationship rooms"
+      ]
+    },
+    "2_mailbox_easter_egg": {
+      "trigger": "Click on mailbox beside path",
+      "action": "Mailbox lid opens with gentle creak; pops up a textured parchment note: 'Something special is being prepared… Happy Anniversary, Aayushi ❤️' with close button and cute wax seal animation."
+    },
+    "3_cat_window_easter_egg": {
+      "trigger": "Click on cat silhouette in 2nd-floor glowing window",
+      "action": "Cat stands up, arches its back in a stretch, gives a tiny tail wiggle, and a soft purr sound cue/heart particle floats up."
+    },
+    "4_chimney_puff_easter_egg": {
+      "trigger": "Click on stone chimney",
+      "action": "Spawns 3 rapid heart-shaped smoke puffs drifting into the night sky with a cozy crackle sound cue."
+    },
+    "5_crescent_moon_easter_egg": {
+      "trigger": "Click on the moon",
+      "action": "Moon pulses with a gentle silver aura halo, spawning a shooting star that streaks across the upper night sky."
+    },
+    "6_firefly_play_easter_egg": {
+      "trigger": "Click or hover over any wandering firefly",
+      "action": "Firefly performs a swift spiral loop toward the house porch light before resuming peaceful wandering."
+    },
+    "7_foliage_rustle_easter_egg": {
+      "trigger": "Click on garden hedges or trees",
+      "action": "Leaves shake/rustle with a quick 3-degree oscillation and a tiny hidden firefly bursts out."
+    }
+  },
+  "ambient_audio_system": {
+    "features": [
+      "Web Audio API synthesized atmospheric soundscapes (no broken external audio links needed, with synthesized soothing night crickets + soft wind chime + warm vinyl crackle + acoustic guitar chords)",
+      "Mute/Unmute toggle button in top right HUD with visual sound wave animation",
+      "Audio manager interface: playAmbient(), playSFX(type), setRoomTrack(roomName)"
+    ]
+  },
+  "rooms_configuration": {
+    "stage_2_roadmap_preview": [
+      {"id": "living_room", "title": "The Living Room", "subtitle": "Where our lazy Sundays and cozy movie nights unfold", "color": "#FFB35C"},
+      {"id": "kitchen", "title": "The Midnight Kitchen", "subtitle": "Late night tea, experiments, and stolen bites", "color": "#F3E9D2"},
+      {"id": "library", "title": "The Memory Library", "subtitle": "Letters, photos, tickets, and little saved tokens", "color": "#453B63"},
+      {"id": "attic", "title": "The Stargazing Attic", "subtitle": "Telescope views, quiet confessions, and dream maps", "color": "#D9F27A"},
+      {"id": "balcony", "title": "The Sunrise Balcony", "subtitle": "First morning coffees and plans for the next adventure", "color": "#FF8A8A"},
+      {"id": "music_nook", "title": "The Acoustic Nook", "subtitle": "Shared playlists, favorite songs, and slow dances", "color": "#52684F"},
+      {"id": "greenhouse", "title": "The Botanical Solarium", "subtitle": "Watching things grow together with patience and care", "color": "#7BDCB5"},
+      {"id": "craft_workshop", "title": "The Keepsake Workshop", "subtitle": "Handmade gifts, anniversary crafts, and surprise notes", "color": "#E5A93C"},
+      {"id": "observatory", "title": "The Constellation Room", "subtitle": "Marking our key milestones written in the stars", "color": "#9B86EE"},
+      {"id": "secret_garden", "title": "The Hidden Garden", "subtitle": "Our future dreams and unwritten chapters yet to bloom", "color": "#FFA333"}
+    ]
+  },
+  "motion_and_performance_spec": {
+    "engine": "CSS keyframe animations for all continuous ambient loops + requestAnimationFrame for mouse parallax + React state / Motion for interactive state transitions",
+    "budget": "Max 80 simultaneous animated nodes; hardware accelerated transforms (translate3d, scale, rotate)",
+    "mobile_optimization": "Device orientation gyroscope drift on mobile or gentle sinusoidal automatic idle breathing when touch is idle; touch-target sizes minimum 48x48px",
+    "reduced_motion": "Respects prefers-reduced-motion media query by disabling star twinkle loops, foliage sway, and parallax, while preserving immediate door opening on click"
+  },
+  "accessibility_requirements": {
+    "keyboard_navigation": "Tab navigation hits: 1. Audio Toggle, 2. Easter Egg Hints, 3. Signboard, 4. Mailbox, 5. Front Door, 6. Cat Window, 7. Chimney, 8. Moon",
+    "focus_styling": "Custom warm gold focus ring: outline: 2px solid #FFB35C; outline-offset: 4px; border-radius: 6px;",
+    "aria_attributes": {
+      "front_door": "role='button' aria-label='Open front door to enter the house' tabindex='0'",
+      "mailbox": "role='button' aria-label='Open mailbox to read anniversary card' tabindex='0'",
+      "sound_toggle": "role='button' aria-label='Toggle atmospheric night sounds'",
+      "easter_eggs": "aria-label with descriptive text for screen readers"
+    },
+    "touch_targets": "All interactive elements have at least 48px touch bounding box"
+  },
+  "testing_attributes_contract": {
+    "scene_container": "data-testid='anniversary-house-scene'",
+    "front_door": "data-testid='front-door-trigger'",
+    "door_handle": "data-testid='front-door-handle'",
+    "mailbox": "data-testid='mailbox-trigger'",
+    "mailbox_modal": "data-testid='mailbox-note-card'",
+    "mailbox_close": "data-testid='mailbox-note-close'",
+    "audio_toggle": "data-testid='audio-toggle-button'",
+    "moon_easter_egg": "data-testid='moon-easter-egg'",
+    "cat_easter_egg": "data-testid='cat-easter-egg'",
+    "chimney_easter_egg": "data-testid='chimney-easter-egg'",
+    "signboard": "data-testid='house-signboard'",
+    "narrative_hint": "data-testid='narrative-text-banner'",
+    "interior_view": "data-testid='house-interior-reveal'",
+    "step_outside_btn": "data-testid='step-outside-button'",
+    "rooms_preview_trigger": "data-testid='rooms-preview-button'",
+    "rooms_modal": "data-testid='rooms-roadmap-modal'",
+    "egg_counter_badge": "data-testid='easter-eggs-counter'"
+  },
+  "instructions_to_main_agent": [
+    "Build the complete Stage 1 experience in frontend/src/pages/Home.tsx and supporting modular components (HouseScene.tsx, AudioPlayer.tsx, MailboxModal.tsx, InteriorView.tsx, RoomsPreviewModal.tsx, EasterEggTracker.tsx).",
+    "Ensure the SVG house is rich, custom-crafted, and painterly: multi-toned roof shingles, wood grain textures, warm glowing multi-pane windows with soft inner gradients, a glowing hanging lantern with a subtle flicker, chimney with drifting smoke puffs, and the carved signboard reading 'Aayushi & Me'.",
+    "Implement the full-screen parallax effect with layered depth (Sky -> Silhouette Mountains -> House & Path -> Foreground Fireflies).",
+    "Implement the custom loading sequence on first load: Pitch black -> single warm lantern ember appears -> ember grows into warm window light -> full night scene smoothly cross-fades in with gentle chime.",
+    "Implement the 5 interactive Easter eggs (Moon shooting star, Chimney extra heart smoke, Cat stretching with purr, Firefly spiral dance, Mailbox anniversary note).",
+    "Implement the cinematic Door Click sequence: smooth camera zoom, lantern bloom, door swings open in 3D perspective, golden light flood, cross-fade to intimate interior with handwritten 'Welcome home' narrative and rooms explorer.",
+    "Include a built-in Web Audio API synthesizer for romantic ambient night soundscapes (warm vinyl crackle, gentle acoustic guitar arpeggio, night crickets) so sound works instantly without any external audio asset dependencies.",
+    "Add all required data-testid attributes to all interactive elements for reliable end-to-end testing."
+  ]
+}

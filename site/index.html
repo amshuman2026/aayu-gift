@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aayushi &amp; Me — Our Little House</title>
+    <meta
+      name="description"
+      content="A little house on a quiet night. There's something waiting inside — click the door."
+    />
+    <meta name="theme-color" content="#12163B" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="app" data-testid="anniversary-house-scene" aria-label="Our little house on a quiet night">
+      <div class="scene" id="scene">
+        <!-- ============ LAYER 0 · SKY ============ -->
+        <div class="layer layer-sky">
+          <div class="parallax" data-depth="0.02">
+            <div class="sky-base" aria-hidden="true"></div>
+            <div class="stars" id="stars" aria-hidden="true"></div>
+            <div class="clouds" aria-hidden="true">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+              <div class="cloud cloud-3"></div>
+            </div>
+            <div class="moon-wrap">
+              <button
+                class="moon"
+                id="moonBtn"
+                data-testid="moon-easter-egg"
+                aria-label="The moon. A quiet little secret."
+              >
+                <span class="moon-halo" aria-hidden="true"></span>
+                <span class="moon-core" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ LAYER 1 · DISTANT RIDGE ============ -->
+        <div class="layer layer-hills">
+          <div class="parallax" data-depth="0.05">
+            <svg class="hills-svg" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="ridgeGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#221C36" />
+                  <stop offset="1" stop-color="#141021" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,330 C120,296 220,312 330,286 C430,262 520,290 640,270 C760,250 840,286 960,268 C1080,250 1180,282 1300,262 C1360,252 1410,262 1440,256 L1440,520 L0,520 Z"
+                fill="url(#ridgeGrad)"
+              />
+              <g fill="#171226">
+                <path d="M180,318 L196,270 L212,318 Z" />
+                <path d="M210,322 L228,264 L246,322 Z" />
+                <path d="M612,282 L630,226 L648,282 Z" />
+                <path d="M644,286 L660,238 L676,286 Z" />
+                <path d="M1064,272 L1082,214 L1100,272 Z" />
+                <path d="M1094,276 L1110,230 L1126,276 Z" />
+                <path d="M1330,266 L1348,212 L1366,266 Z" />
+              </g>
+              <path
+                d="M0,392 C160,362 300,386 460,368 C620,350 760,380 920,362 C1080,346 1240,376 1440,352 L1440,520 L0,520 Z"
+                fill="#100D1B"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <!-- ============ LAYER 2 · THE HOUSE ============ -->
+        <div class="layer layer-house">
+          <div class="parallax" data-depth="0.09">
+            <div class="house-anchor">
+              <svg
+                id="houseSvg"
+                viewBox="0 0 1000 700"
+                preserveAspectRatio="xMidYMax meet"
+                role="img"
+                aria-label="A cozy two-story house at night, windows glowing warm"
+              >
+                <defs>
+                  <linearGradient id="wallL" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#6E5B49" />
+                    <stop offset="1" stop-color="#443529" />
+                  </linearGradient>
+                  <linearGradient id="wallR" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#5E4C3E" />
+                    <stop offset="1" stop-color="#3A2D23" />
+                  </linearGradient>
+                  <linearGradient id="gableGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#544335" />
+                    <stop offset="1" stop-color="#37291E" />
+                  </linearGradient>
+                  <linearGradient id="roofGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#3A2A1E" />
+                    <stop offset="1" stop-color="#1F140C" />
+                  </linearGradient>
+                  <linearGradient id="roofGrad2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#332418" />
+                    <stop offset="1" stop-color="#191009" />
+                  </linearGradient>
+                  <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1C2A20" />
+                    <stop offset="1" stop-color="#0F1712" />
+                  </linearGradient>
+                  <linearGradient id="doorGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#553B2A" />
+                    <stop offset="1" stop-color="#2E1F15" />
+                  </linearGradient>
+                  <radialGradient id="winGlow" cx="0.5" cy="0.45" r="0.75">
+                    <stop offset="0" stop-color="#FFE3B0" />
+                    <stop offset="0.55" stop-color="#FFB35C" />
+                    <stop offset="1" stop-color="#B96B23" />
+                  </radialGradient>
+                  <radialGradient id="winGlowDim" cx="0.5" cy="0.45" r="0.75">
+                    <stop offset="0" stop-color="#AEBFDB" />
+                    <stop offset="1" stop-color="#4A5470" />
+                  </radialGradient>
+                  <radialGradient id="lanternHalo" cx="0.5" cy="0.5" r="0.5">
+                    <stop offset="0" stop-color="#FFD9A0" stop-opacity="0.85" />
+                    <stop offset="0.5" stop-color="#FFB35C" stop-opacity="0.35" />
+                    <stop offset="1" stop-color="#FFB35C" stop-opacity="0" />
+                  </radialGradient>
+                  <radialGradient id="doorBloomGrad" cx="0.5" cy="0.6" r="0.65">
+                    <stop offset="0" stop-color="#FFE9C4" />
+                    <stop offset="0.45" stop-color="#FFB35C" stop-opacity="0.6" />
+                    <stop offset="1" stop-color="#FFB35C" stop-opacity="0" />
+                  </radialGradient>
+                  <radialGradient id="winSpill" cx="0.5" cy="0.5" r="0.5">
+                    <stop offset="0" stop-color="#FFB35C" stop-opacity="0.32" />
+                    <stop offset="1" stop-color="#FFB35C" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+
+                <!-- ground -->
+                <path d="M0,552 C160,540 340,548 500,544 C680,540 840,548 1000,542 L1000,700 L0,700 Z" fill="url(#groundGrad)" />
+                <path d="M0,552 C160,540 340,548 500,544 C680,540 840,548 1000,542" fill="none" stroke="#8FA6C4" stroke-opacity="0.08" stroke-width="2" />
+
+                <!-- path -->
+                <g aria-hidden="true">
+                  <path d="M378,560 C500,612 660,652 840,674" fill="none" stroke="#FFB35C" stroke-opacity="0.10" stroke-width="34" stroke-linecap="round" />
+                  <path d="M378,560 C500,612 660,652 840,674" fill="none" stroke="#FFB35C" stroke-opacity="0.09" stroke-width="13" stroke-linecap="round" />
+                  <ellipse cx="398" cy="572" rx="15" ry="6.5" fill="#6A5644" />
+                  <ellipse cx="430" cy="590" rx="17" ry="7.5" fill="#5D4B3C" />
+                  <ellipse cx="466" cy="607" rx="19" ry="8.5" fill="#544437" />
+                  <ellipse cx="507" cy="623" rx="21" ry="9.5" fill="#4C3E33" />
+                  <ellipse cx="556" cy="639" rx="23" ry="10.5" fill="#453830" />
+                  <ellipse cx="613" cy="653" rx="25" ry="11" fill="#3F3330" />
+                  <ellipse cx="676" cy="665" rx="27" ry="11.5" fill="#392F2C" />
+                </g>
+
+                <!-- trees -->
+                <g aria-hidden="true">
+                  <path d="M118,542 C124,480 112,442 117,378 L129,378 C132,442 127,480 133,542 Z" fill="#241A14" />
+                  <path d="M122,420 C104,404 96,390 94,374" fill="none" stroke="#241A14" stroke-width="6" stroke-linecap="round" />
+                  <path d="M124,436 C142,420 152,408 154,392" fill="none" stroke="#241A14" stroke-width="6" stroke-linecap="round" />
+                  <g class="foli foli-1"><ellipse cx="88" cy="352" rx="52" ry="44" fill="#2C3E2D" /></g>
+                  <g class="foli foli-2"><ellipse cx="152" cy="346" rx="48" ry="42" fill="#263726" /></g>
+                  <g class="foli foli-3">
+                    <ellipse cx="119" cy="300" rx="58" ry="48" fill="#31452F" />
+                    <ellipse cx="104" cy="316" rx="40" ry="26" fill="#3A5138" opacity="0.55" />
+                  </g>
+                </g>
+                <g aria-hidden="true">
+                  <path d="M898,544 C904,500 894,470 899,430 L909,430 C912,470 906,500 911,544 Z" fill="#221812" />
+                  <g class="foli foli-4"><ellipse cx="905" cy="404" rx="47" ry="40" fill="#2A3C2B" /></g>
+                  <g class="foli foli-5"><ellipse cx="866" cy="426" rx="33" ry="28" fill="#243423" /></g>
+                  <g class="foli foli-6"><ellipse cx="944" cy="424" rx="31" ry="27" fill="#263726" /></g>
+                </g>
+
+                <!-- ============ HOUSE · LEFT BLOCK ============ -->
+                <path d="M256,268 C310,262 430,264 486,268 L488,540 L254,540 Z" fill="url(#wallL)" />
+                <path d="M252,506 L490,506 L490,540 L252,540 Z" fill="#35281F" />
+                <g stroke="#241A12" stroke-opacity="0.5" stroke-width="2" aria-hidden="true">
+                  <path d="M290,510 L290,538" /><path d="M330,512 L330,540" /><path d="M410,510 L410,538" /><path d="M452,512 L452,540" />
+                </g>
+                <!-- gable -->
+                <path d="M254,270 L366,182 L478,270 Z" fill="url(#gableGrad)" />
+
+                <!-- chimney (behind roof band) -->
+                <g id="chimneyGroup" data-testid="chimney-easter-egg" role="button" tabindex="0" aria-label="The chimney. Give it a knock.">
+                  <rect x="280" y="182" width="36" height="62" fill="#4A4038" />
+                  <path d="M280,206 L316,206 M280,226 L316,226" stroke="#332B24" stroke-width="2.5" />
+                  <rect x="274" y="170" width="48" height="14" rx="4" fill="#241A15" />
+                  <rect class="hit" x="264" y="150" width="66" height="100" />
+                </g>
+                <g id="smokeGroup" aria-hidden="true">
+                  <circle class="puff puff-1" cx="298" cy="162" r="9" />
+                  <circle class="puff puff-2" cx="298" cy="162" r="11" />
+                  <circle class="puff puff-3" cx="298" cy="162" r="8" />
+                </g>
+
+                <!-- main roof -->
+                <path d="M196,300 L366,170 L536,300 L536,306 L366,180 L196,306 Z" fill="url(#roofGrad)" />
+                <path d="M196,300 L366,170" fill="none" stroke="#BACFFF" stroke-opacity="0.3" stroke-width="3" stroke-linecap="round" />
+
+                <!-- ============ HOUSE · RIGHT WING ============ -->
+                <path d="M492,318 C560,313 640,315 678,319 L680,540 L490,540 Z" fill="url(#wallR)" />
+                <path d="M490,500 L682,500 L682,540 L490,540 Z" fill="#2E231B" />
+                <path d="M470,336 L586,240 L702,336 L702,342 L586,248 L470,342 Z" fill="url(#roofGrad2)" />
+                <path d="M470,336 L586,240" fill="none" stroke="#BACFFF" stroke-opacity="0.22" stroke-width="3" stroke-linecap="round" />
+
+                <!-- balcony + cat window -->
+                <g class="win win-balcony">
+                  <rect x="548" y="346" width="56" height="80" rx="7" fill="url(#winGlow)" class="win-glow" />
+                  <g id="catGroup" data-testid="cat-easter-egg" role="button" tabindex="0" aria-label="A small cat sitting in the window. Say hello.">
+                    <g class="cat-body">
+                      <path d="M560,424 C558,408 563,399 571,395 L569,386 L575,391 L580,385 L581,393 C589,396 593,406 593,424 Z" fill="#15111F" />
+                      <path d="M592,421 C601,417 604,408 599,401" fill="none" stroke="#15111F" stroke-width="4.5" stroke-linecap="round" />
+                    </g>
+                    <rect class="hit" x="548" y="376" width="56" height="50" />
+                  </g>
+                  <rect x="548" y="346" width="56" height="80" rx="7" fill="none" stroke="#241A15" stroke-width="5" />
+                  <path d="M576,348 L576,424 M550,386 L602,386" stroke="#241A15" stroke-width="3.5" />
+                </g>
+                <g aria-hidden="true">
+                  <rect x="516" y="426" width="116" height="11" rx="3" fill="#3B2A20" />
+                  <rect x="512" y="386" width="124" height="5" rx="2" fill="#3B2A20" />
+                  <g stroke="#3B2A20" stroke-width="3.5">
+                    <path d="M522,391 L522,426" /><path d="M540,391 L540,426" /><path d="M558,391 L558,426" /><path d="M576,391 L576,426" /><path d="M594,391 L594,426" /><path d="M612,391 L612,426" />
+                  </g>
+                  <path d="M526,437 L540,437 L533,426 Z" fill="#2A1F18" />
+                  <path d="M606,437 L620,437 L613,426 Z" fill="#2A1F18" />
+                </g>
+
+                <!-- round attic window -->
+                <g class="win win-round">
+                  <circle cx="366" cy="248" r="17" fill="url(#winGlow)" class="win-glow" />
+                  <circle cx="366" cy="248" r="17" fill="none" stroke="#241A15" stroke-width="5" />
+                  <path d="M349,248 L383,248 M366,231 L366,265" stroke="#241A15" stroke-width="3" />
+                </g>
+
+                <!-- curtained window -->
+                <g class="win win-curtain">
+                  <ellipse cx="428" cy="404" rx="62" ry="18" fill="url(#winSpill)" aria-hidden="true" />
+                  <path d="M396,388 L396,340 Q396,314 428,314 Q460,314 460,340 L460,388 Z" fill="url(#winGlow)" class="win-glow" />
+                  <path class="curtain curtain-l" d="M400,320 C397,344 402,366 396,386 L413,386 C408,362 410,338 415,322 Z" />
+                  <path class="curtain curtain-r" d="M456,320 C459,344 454,366 460,386 L443,386 C448,362 446,338 441,322 Z" />
+                  <path d="M396,388 L396,340 Q396,314 428,314 Q460,314 460,340 L460,388 Z" fill="none" stroke="#241A15" stroke-width="5" />
+                  <path d="M428,316 L428,386" stroke="#241A15" stroke-width="3" />
+                  <rect x="388" y="388" width="80" height="8" rx="3" fill="#241A15" />
+                </g>
+
+                <!-- downstairs windows -->
+                <g class="win win-left">
+                  <ellipse cx="298" cy="500" rx="56" ry="16" fill="url(#winSpill)" aria-hidden="true" />
+                  <rect x="272" y="430" width="52" height="62" rx="9" fill="url(#winGlow)" class="win-glow" />
+                  <rect x="272" y="430" width="52" height="62" rx="9" fill="none" stroke="#241A15" stroke-width="5" />
+                  <path d="M298,432 L298,490 M274,461 L322,461" stroke="#241A15" stroke-width="3" />
+                </g>
+                <g class="win win-dim">
+                  <rect x="630" y="440" width="40" height="48" rx="7" fill="url(#winGlowDim)" class="win-glow" />
+                  <rect x="630" y="440" width="40" height="48" rx="7" fill="none" stroke="#241A15" stroke-width="4.5" />
+                  <path d="M650,442 L650,486" stroke="#241A15" stroke-width="3" />
+                </g>
+
+                <!-- ============ DOOR ============ -->
+                <g id="doorGroup" class="door-group" data-testid="front-door-trigger" role="button" tabindex="0" aria-label="Open the front door and step inside">
+                  <path d="M328,452 Q380,418 432,452 L432,464 Q380,432 328,464 Z" fill="url(#roofGrad2)" />
+                  <path d="M340,462 L336,452 M420,462 L424,452" stroke="#241A12" stroke-width="4" />
+                  <ellipse class="door-halo" cx="378" cy="496" rx="78" ry="66" fill="url(#lanternHalo)" />
+                  <rect x="342" y="452" width="74" height="88" fill="#140D09" />
+                  <ellipse class="door-bloom" id="doorBloom" cx="379" cy="500" rx="46" ry="64" fill="url(#doorBloomGrad)" />
+                  <g class="door-panel" id="doorPanel">
+                    <path d="M342,540 L342,472 Q342,452 379,452 Q416,452 416,472 L416,540 Z" fill="url(#doorGrad)" />
+                    <path d="M359,458 L359,540 M379,454 L379,540 M399,458 L399,540" stroke="#241712" stroke-opacity="0.65" stroke-width="2.5" />
+                    <rect class="door-handle" id="doorHandle" data-testid="front-door-handle" x="398" y="494.5" width="15" height="7" rx="3.5" fill="#FFB35C" />
+                  </g>
+                  <path d="M340,540 L342,470 Q342,450 379,450 Q416,450 416,470 L418,540 Z" fill="none" stroke="#241A15" stroke-width="5" />
+                  <path d="M404,452 L404,470" stroke="#241A15" stroke-width="3" />
+                  <g id="lantern" aria-hidden="true">
+                    <path d="M416,456 L416,470" stroke="#241A15" stroke-width="3" />
+                    <circle class="lantern-glow" id="lanternGlow" cx="416" cy="482" r="26" fill="url(#lanternHalo)" />
+                    <rect x="410" y="470" width="12" height="17" rx="3" fill="#241A15" />
+                    <rect class="lantern-flame" x="412.5" y="473" width="7" height="11" rx="2" fill="#FFD9A0" />
+                  </g>
+                  <ellipse cx="378" cy="545" rx="72" ry="13" fill="#FFB35C" opacity="0.14" aria-hidden="true" />
+                  <rect x="334" y="540" width="76" height="10" rx="4" fill="#3A2C22" />
+                  <rect x="326" y="550" width="92" height="10" rx="4" fill="#33261D" />
+                  <rect class="hit" x="318" y="424" width="126" height="140" />
+                </g>
+
+                <!-- signboard -->
+                <g data-testid="house-signboard" aria-label="A small hand-painted signboard reading Aayushi and Me">
+                  <g transform="rotate(-4 457 480)">
+                    <rect x="453" y="490" width="7" height="48" rx="2" fill="#2C2018" />
+                    <g class="board-sway">
+                      <rect x="414" y="464" width="86" height="30" rx="6" fill="#231812" stroke="#F3E9D2" stroke-opacity="0.45" stroke-width="1.5" />
+                      <text x="457" y="485" text-anchor="middle" font-family="Caveat, cursive" font-size="16" font-weight="700" fill="#F3E9D2">Aayushi &amp; Me</text>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- hedges & garden -->
+                <g aria-hidden="true">
+                  <g class="foli foli-7"><ellipse cx="240" cy="536" rx="36" ry="17" fill="#22331F" /></g>
+                  <g class="foli foli-8"><ellipse cx="530" cy="538" rx="30" ry="14" fill="#263726" /></g>
+                  <circle cx="252" cy="528" r="2.6" fill="#FFB35C" opacity="0.85" />
+                  <circle cx="540" cy="532" r="2.4" fill="#D9F27A" opacity="0.8" />
+                </g>
+                <g id="bushGroup" data-testid="garden-foliage" role="button" tabindex="0" aria-label="A leafy bush. Rustle it.">
+                  <g class="foli foli-9">
+                    <ellipse cx="700" cy="532" rx="42" ry="21" fill="#26381F" />
+                    <ellipse cx="728" cy="540" rx="26" ry="14" fill="#2C3E2D" />
+                  </g>
+                  <circle cx="688" cy="524" r="2.4" fill="#FFB35C" opacity="0.8" />
+                  <rect class="hit" x="654" y="500" width="106" height="56" />
+                </g>
+
+                <!-- ============ MAILBOX ============ -->
+                <g id="mailboxGroup" data-testid="mailbox-trigger" role="button" tabindex="0" aria-label="Open the mailbox and read the note">
+                  <rect x="786" y="498" width="8" height="46" rx="2" fill="#2C2018" />
+                  <path d="M760,500 L760,486 Q760,470 782,470 L810,470 Q824,470 824,486 L824,500 Z" fill="#3D4757" />
+                  <path d="M762,486 Q762,472 782,472 L810,472" fill="none" stroke="#8FA6C4" stroke-opacity="0.35" stroke-width="2.5" />
+                  <rect x="756" y="494" width="72" height="7" rx="3" fill="#2A3240" />
+                  <path d="M822,478 L822,464" stroke="#FFB35C" stroke-width="3" stroke-linecap="round" />
+                  <rect x="822" y="464" width="11" height="8" rx="1.5" fill="#FFB35C" />
+                  <rect class="hit" x="744" y="456" width="104" height="92" />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ LAYER 3 · FOREGROUND ============ -->
+        <div class="layer layer-front">
+          <div class="parallax" data-depth="0.16">
+            <svg class="front-svg" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+              <g class="grass grass-back" fill="#101A10">
+                <path d="M0,220 C90,204 180,222 280,210 C380,198 470,218 570,208 C670,198 760,220 860,210 C960,200 1060,220 1160,208 C1260,198 1360,214 1440,204 L1440,300 L0,300 Z" />
+              </g>
+              <g class="grass grass-front" fill="#0A110A">
+                <path d="M0,248 C120,236 240,252 360,244 C480,236 600,252 720,244 C840,236 960,252 1080,242 C1200,234 1320,250 1440,240 L1440,300 L0,300 Z" />
+                <path d="M60,252 C56,220 64,196 60,176 C70,196 74,224 72,252 Z" />
+                <path d="M92,254 C96,226 88,204 92,186 C82,206 80,232 82,254 Z" />
+                <path d="M1310,248 C1306,214 1316,192 1312,170 C1322,192 1326,222 1324,248 Z" />
+                <path d="M1344,250 C1350,226 1342,204 1346,186 C1356,208 1358,232 1356,250 Z" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- fireflies -->
+        <div class="fireflies" id="fireflyLayer" aria-hidden="true"></div>
+
+        <!-- narrative -->
+        <div class="narrative" data-testid="narrative-text-banner">
+          <p class="hint hint-main" id="hintMain">There&rsquo;s something waiting inside.</p>
+          <p class="hint hint-sub" id="hintSub">Click the door.</p>
+        </div>
+      </div>
+
+      <!-- ============ INTERIOR PLACEHOLDER ============ -->
+      <section
+        class="interior"
+        id="interior"
+        data-testid="house-interior-reveal"
+        role="region"
+        aria-label="Inside the house"
+      >
+        <div class="interior-arch" aria-hidden="true"></div>
+        <div class="motes" aria-hidden="true">
+          <span class="mote"></span><span class="mote"></span><span class="mote"></span>
+          <span class="mote"></span><span class="mote"></span>
+        </div>
+        <h1 class="interior-title">Welcome home.</h1>
+        <p class="interior-sub">Stage 1 — the rest of our story is still being written&hellip;</p>
+        <button class="step-outside" id="stepOutsideBtn" data-testid="step-outside-button">Step back outside</button>
+      </section>
+
+      <!-- ============ MAILBOX NOTE ============ -->
+      <div class="mailbox-pop" id="mailboxPop" data-testid="mailbox-note-card" role="dialog" aria-label="A note from the mailbox" aria-hidden="true">
+        <span class="wax-seal" aria-hidden="true"></span>
+        <p class="note-text">Something special is being prepared&hellip;</p>
+        <button class="note-close" id="noteCloseBtn" data-testid="mailbox-note-close" aria-label="Close the note">&#10005;</button>
+      </div>
+
+      <!-- ============ LOADER ============ -->
+      <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-glow"></div>
+        <div class="ember"></div>
+      </div>
+    </main>
+    <noscript>
+      <p style="position: fixed; inset: auto 0 0 0; text-align: center; padding: 12px; color: #f3e9d2; background: #12163b; font-family: sans-serif">
+        The fireflies are shy — enable JavaScript to see them.
+      </p>
+    </noscript>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
