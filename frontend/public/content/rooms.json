@@ -1,5 +1,8 @@
 {
   "_readme": "Aayushi & Me - all fill-in-later content lives here. See HOW_TO_EDIT.md next to this file. Only simple text and file paths - never any code.",
+  "exterior": {
+    "mailboxNote": "To our Aayushi \u2014 your whole circle is rooting for you as CA exam season comes around. We know how hard you've worked, and we have zero doubt you're going to do brilliantly. Rest when you need to, trust your prep, and know we're all in your corner. With so much love and belief, your friends & family."
+  },
   "hallway": {
     "background": "/hallway.jpg",
     "lockedMessage": "View the room before this to unlock.",
@@ -24,7 +27,7 @@
   },
   "timeCapsule": {
     "title": "Time Capsule",
-    "subtitle": "fifty-four little pieces of us",
+    "subtitle": "twelve little pieces of us",
     "memories": [
       {
         "id": 1,
@@ -94,258 +97,6 @@
       },
       {
         "id": 12,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 13,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 14,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 15,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 16,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 17,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 18,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 19,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 20,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 21,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 22,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 23,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 24,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 25,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 26,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 27,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 28,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 29,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 30,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 31,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 32,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 33,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 34,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 35,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 36,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 37,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 38,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 39,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 40,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 41,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 42,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 43,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 44,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 45,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 46,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 47,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 48,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 49,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 50,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 51,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 52,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 53,
-        "video": "",
-        "poster": "",
-        "caption": ""
-      },
-      {
-        "id": 54,
         "video": "",
         "poster": "",
         "caption": ""
@@ -515,6 +266,6 @@
     "emptyText": "A video message is waiting to be recorded for you.",
     "video": "",
     "poster": "",
-    "caption": ""
+    "caption": "That's the whole idea behind this house, Aayushi \u2014 you have always been my home."
   }
 }

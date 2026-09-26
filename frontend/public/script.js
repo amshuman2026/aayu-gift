@@ -163,6 +163,20 @@
   bushFoli.addEventListener("animationend", () => bushFoli.classList.remove("rustle"));
 
   /* ---------------- mailbox note ---------------- */
+  /* the letter's text lives in content/rooms.json (exterior.mailboxNote);
+     the markup keeps a placeholder as the fallback if the fetch fails. */
+  const noteText = document.querySelector(".note-text");
+  fetch("content/rooms.json", { cache: "no-cache" })
+    .then((r) => r.json())
+    .then((data) => {
+      if (noteText && data.exterior && data.exterior.mailboxNote) {
+        noteText.textContent = data.exterior.mailboxNote;
+      }
+    })
+    .catch(() => {
+      /* keep the placeholder already in the markup */
+    });
+
   function setNote(open) {
     mailboxPop.classList.toggle("open", open);
     mailboxPop.setAttribute("aria-hidden", String(!open));

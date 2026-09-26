@@ -230,7 +230,7 @@
     const collage = document.createElement("div");
     collage.className = "collage";
     collage.setAttribute("aria-hidden", "true");
-    for (let i = 0; i < c.memories.length; i++) {
+    for (let i = 0; i < 36; i++) {
       const s = document.createElement("span");
       s.style.animationDelay = (-i * 0.31).toFixed(2) + "s";
       collage.appendChild(s);
@@ -481,18 +481,21 @@
   function buildFinalRoom() {
     const c = content.finalDoor;
     const body = roomShell("finalDoor", c.title, "the last door in the house");
+    const cap = document.createElement("p");
+    cap.className = "caption" + (REDUCED ? "" : " cap-hidden");
+    cap.dataset.testid = "final-caption";
+    cap.textContent = c.caption || "";
     const frame = mediaFrame(
       c.video,
       c.poster,
       c.title,
       c.video ? "" : c.emptyText,
-      () => markDone("finalDoor"),
+      () => {
+        cap.classList.remove("cap-hidden");
+        markDone("finalDoor");
+      },
       "final-player"
     );
-    const cap = document.createElement("p");
-    cap.className = "caption";
-    cap.dataset.testid = "final-caption";
-    cap.textContent = c.caption || "";
     body.append(frame.el, cap);
   }
 
@@ -523,6 +526,35 @@
       }
     })
     .catch(() => toast("Couldn't load the rooms \u2014 please refresh."));
+
+  /* ---------------- hallway parallax (a few pixels of life) ---------------- */
+  if (!REDUCED && hall) {
+    const frame = hall.querySelector(".hall-frame");
+    let hx = 0;
+    let hy = 0;
+    let hraf = 0;
+    let htx = 0;
+    let hty = 0;
+    window.addEventListener(
+      "pointermove",
+      (e) => {
+        htx = (e.clientX / window.innerWidth - 0.5) * 8;
+        hty = (e.clientY / window.innerHeight - 0.5) * 5;
+        if (!hraf) hraf = window.requestAnimationFrame(driftHall);
+      },
+      { passive: true }
+    );
+    function driftHall() {
+      hx += (htx - hx) * 0.06;
+      hy += (hty - hy) * 0.06;
+      frame.style.transform =
+        "translate3d(" + hx.toFixed(2) + "px," + hy.toFixed(2) + "px,0)";
+      hraf =
+        Math.abs(htx - hx) > 0.05 || Math.abs(hty - hy) > 0.05
+          ? window.requestAnimationFrame(driftHall)
+          : 0;
+    }
+  }
 
   /* capture phase, so Stage 1's Escape handler doesn't also step outside */
   window.addEventListener(

@@ -1,6 +1,6 @@
 # How to edit the house content (no code needed)
 
-Everything you'll want to swap later — the 54 memory videos and captions, the 10 quiz
+Everything you'll want to swap later — the 12 memory videos and captions, the 10 quiz
 photos/questions, the 2 dance videos, and the final video message — lives in **one** file:
 
 ```
@@ -20,9 +20,9 @@ safely. Rules that always apply:
 
 ---
 
-## Room 1 — Time Capsule (54 memories)
+## Room 1 — Time Capsule (12 memories)
 
-Find `"timeCapsule"` → `"memories"`. There are 54 blocks, numbered 1 to 54:
+Find `"timeCapsule"` → `"memories"`. There are 12 blocks, numbered 1 to 12:
 
 ```json
 { "id": 7, "video": "", "poster": "", "caption": "" }
@@ -77,7 +77,13 @@ Find `"finalDoor"`:
 "video": "/media/final-message.mp4", "poster": "", "caption": "for you, always"
 ```
 
-`emptyText` is what shows while `video` is still empty.
+`emptyText` is what shows while `video` is still empty. The `caption` here is the ending line —
+it stays hidden until the video has played all the way through, then fades in.
+
+## The mailbox letter (outside, before you even open the door)
+
+Find `"exterior"` → `"mailboxNote"`. That one line of text is the whole letter shown when the
+mailbox is clicked. Swap in real names freely — the note box scrolls if the letter gets long.
 
 ## Hallway
 
